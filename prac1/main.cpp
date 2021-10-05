@@ -1,5 +1,10 @@
-#include <QtWidgets>
+#include <QApplication>
 #include "ejemplo1.h"
+
+/***
+ * AUTORES : JAIME GONZÁLEZ NAVAREÑO Y FÉLIX GONZÁLEZ ZAERA
+ */
+
 
 int main(int argc, char** argv)
 {

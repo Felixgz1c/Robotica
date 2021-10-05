@@ -1,0 +1,7 @@
+/home/felixgz/Robotica/prac1/CMakeFiles/install/strip.dir
+/home/felixgz/Robotica/prac1/CMakeFiles/install.dir
+/home/felixgz/Robotica/prac1/CMakeFiles/list_install_components.dir
+/home/felixgz/Robotica/prac1/CMakeFiles/rebuild_cache.dir
+/home/felixgz/Robotica/prac1/CMakeFiles/edit_cache.dir
+/home/felixgz/Robotica/prac1/CMakeFiles/install/local.dir
+/home/felixgz/Robotica/prac1/CMakeFiles/ejemplo1.dir
