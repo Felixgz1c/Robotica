@@ -1,0 +1,51 @@
+/snap/clion/164/bin/cmake/linux/bin/cmake -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/felixgz/G7-X2/Robotica/Controller
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 9.3.0
+-- The CXX compiler identification is GNU 9.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- COMPILING WITH QT5
+-- RoboComp root is now set to /home/felixgz/robocomp/
+-- 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Ice version: 3.7.6
+-- Found the following Ice libraries:
+--   Ice (required)
+--   IceStorm (required)
+-- The following Ice libraries were not found:
+--   IceUtil (optional)
+-- Found Ice: /usr/bin/slice2cpp (found version "3.7.6") 
+-- BU Adding rule to generate /home/felixgz/G7-X2/Robotica/Controller/src/CommonBehavior.ice from /home/felixgz/robocomp/interfaces/IDSLs/CommonBehavior.idsl
+-- BU Adding rule to generate /home/felixgz/G7-X2/Robotica/Controller/src/DifferentialRobot.ice from /home/felixgz/robocomp/interfaces/IDSLs/DifferentialRobot.idsl
+-- BU Adding rule to generate /home/felixgz/G7-X2/Robotica/Controller/src/GenericBase.ice from /home/felixgz/robocomp/interfaces/IDSLs/GenericBase.idsl
+-- BU Adding rule to generate /home/felixgz/G7-X2/Robotica/Controller/src/Laser.ice from /home/felixgz/robocomp/interfaces/IDSLs/Laser.idsl
+-- BU ice=>h/cpp: Adding rule to generate CommonBehavior.h and CommonBehavior.cpp from /home/felixgz/G7-X2/Robotica/Controller/src/CommonBehavior.ice
+-- BU ice=>h/cpp: Adding rule to generate DifferentialRobot.h and DifferentialRobot.cpp from /home/felixgz/G7-X2/Robotica/Controller/src/DifferentialRobot.ice
+-- BU ice=>h/cpp: Adding rule to generate GenericBase.h and GenericBase.cpp from /home/felixgz/G7-X2/Robotica/Controller/src/GenericBase.ice
+-- BU ice=>h/cpp: Adding rule to generate Laser.h and Laser.cpp from /home/felixgz/G7-X2/Robotica/Controller/src/Laser.ice
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/felixgz/G7-X2/Robotica/Controller

@@ -1,0 +1,2 @@
+/opt/robocomp/etc-default/Controller.conf
+/opt/robocomp/bin/Controller
