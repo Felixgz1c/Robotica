@@ -1,0 +1,15 @@
+/home/felixgz/G7-X2/Robotica/prac2/Controller/CMakeFiles/install/strip.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/CMakeFiles/install/local.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/CMakeFiles/install.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/CMakeFiles/list_install_components.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/CMakeFiles/rebuild_cache.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/CMakeFiles/edit_cache.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/src/CMakeFiles/install/strip.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/src/CMakeFiles/install/local.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/src/CMakeFiles/edit_cache.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/src/CMakeFiles/Controller.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/src/CMakeFiles/install.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/src/CMakeFiles/list_install_components.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/src/CMakeFiles/rebuild_cache.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/src/CMakeFiles/ICES__home_felixgz_G7-X2_Robotica_prac2_Controller_src.dir
+/home/felixgz/G7-X2/Robotica/prac2/Controller/src/CMakeFiles/Controller_autogen.dir

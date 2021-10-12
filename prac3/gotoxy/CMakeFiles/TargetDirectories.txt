@@ -1,0 +1,15 @@
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/CMakeFiles/install/strip.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/CMakeFiles/install/local.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/CMakeFiles/edit_cache.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/CMakeFiles/rebuild_cache.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/CMakeFiles/list_install_components.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/CMakeFiles/install.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/src/CMakeFiles/install/strip.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/src/CMakeFiles/install/local.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/src/CMakeFiles/install.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/src/CMakeFiles/list_install_components.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/src/CMakeFiles/edit_cache.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/src/CMakeFiles/ICES__home_felixgz_G7-X2_Robotica_prac3_gotoxy_src.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/src/CMakeFiles/gotoxy.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/src/CMakeFiles/rebuild_cache.dir
+/home/felixgz/G7-X2/Robotica/prac3/gotoxy/src/CMakeFiles/gotoxy_autogen.dir
