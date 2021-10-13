@@ -55,7 +55,7 @@ void SpecificWorker::initialize(int period)
         last_point = QPointF(bState.x, bState.z);
     }
     catch(const Ice::Exception &e) { std::cout << e.what() << std::endl;}
-    //connect(viewer, &AbstractGraphicViewer::new_mouse_coordinates, this, &SpecificWorker::new_target_slot);
+    connect(viewer, &AbstractGraphicViewer::new_mouse_coordinates, this, &SpecificWorker::new_target_slot);
 	this->Period = period;
 	if(this->startup_check_flag)
 	{
@@ -70,9 +70,11 @@ void SpecificWorker::initialize(int period)
 
 void SpecificWorker::compute()
 {
+    RoboCompGenericBase::TBaseState bState;
     try
     {
         RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData();
+        draw_laser(ldata);
 
     }
     catch(const Ice::Exception &ex)
@@ -82,7 +84,6 @@ void SpecificWorker::compute()
 
     try
     {
-        RoboCompGenericBase::TBaseState bState;
         differentialrobot_proxy->getBaseState(bState);
         robot_polygon->setRotation(bState.alpha*180/M_PI);
         robot_polygon->setPos(bState.x, bState.z);
@@ -93,7 +94,63 @@ void SpecificWorker::compute()
     {
         std::cout << ex << std::endl;
     }
+    if(target.activo){
 
+        Eigen::Vector2f robot_eigen(bState.x,bState.z);
+        Eigen::Vector2f target_eigen(target.dest.x(),target.dest.y());
+        if(float dist=(robot_eigen-target_eigen).norm(); dist > 100) {
+
+
+            //si el robot esta en el target ponemos el target a false
+
+            /*
+             * 1. convertir el target a coordenadas del robot
+             * 2. obtener el angulo beta (el robot con el target)
+             * 3. obtener la velocidad de avance (utilizar  como vel de giro) (primero a 0)
+             * 4. mover el robot con las vel obtenidas
+            */
+            QPointF pr = world_to_robot(target, bState);
+            float beta = atan2(pr.x(), pr.y());
+            float adv = MAX_ADV_SPEED * dist_to_target() * rotation_speed(beta);
+            try {
+                differentialrobot_proxy->setSpeedBase(adv, beta);
+            }
+            catch (const Ice::Exception &ex) {
+                std::cout << ex << std::endl;
+            }
+        }
+        else
+            target.activo=false;
+    }
+}
+
+void SpecificWorker::new_target_slot(QPointF point) {
+    qInfo()<<point;
+    target.dest=point;
+    target.activo=true;
+}
+
+void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot coordinates
+{
+    static QGraphicsItem *laser_polygon = nullptr;
+    // code to delete any existing laser graphic element
+    if(laser_polygon!= nullptr){
+        viewer->scene.removeItem(laser_polygon);
+    }
+    QPolygonF poly;
+    // code to fill poly with the laser polar coordinates (angle, dist) transformed to cartesian coordinates (x,y), all in the robot's  // reference system
+    poly<<QPointF(0,0);
+    for (auto &p : ldata){
+        float x = p.dist * sin(p.angle);
+        float y = p.dist * cos(p.angle);
+        poly<<QPointF(x,y);
+    }
+
+    QColor color("LightGreen");
+    color.setAlpha(40);
+    laser_polygon = viewer->scene.addPolygon(laser_in_robot_polygon->mapToScene(poly), QPen(QColor("DarkGreen"), 30),
+                                             QBrush(color));
+    laser_polygon->setZValue(3);
 }
 
 int SpecificWorker::startup_check()
@@ -101,6 +158,19 @@ int SpecificWorker::startup_check()
 	std::cout << "Startup check" << std::endl;
 	QTimer::singleShot(200, qApp, SLOT(quit()));
 	return 0;
+}
+
+QPointF SpecificWorker::world_to_robot(SpecificWorker::Target target, RoboCompGenericBase::TBaseState state) {
+
+    return QPointF();//crear matriz con eigen 2f . bstate.angle
+}
+
+float SpecificWorker::dist_to_target() {
+    return 0;
+}
+
+float SpecificWorker::rotation_speed(float beta) {
+    return 0;
 }
 
 /**************************************/
