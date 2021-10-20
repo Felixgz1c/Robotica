@@ -98,6 +98,8 @@ void SpecificWorker::compute()
 
         Eigen::Vector2f robot_eigen(bState.x,bState.z);
         Eigen::Vector2f target_eigen(target.dest.x(),target.dest.y());
+
+
         if(float dist=(robot_eigen-target_eigen).norm(); dist > 100) {
 
 
@@ -109,9 +111,10 @@ void SpecificWorker::compute()
              * 3. obtener la velocidad de avance (utilizar  como vel de giro) (primero a 0)
              * 4. mover el robot con las vel obtenidas
             */
-            QPointF pr = world_to_robot(target, bState);
+            Eigen::Vector2f pr = world_to_robot(target, bState,robot_eigen,target_eigen);
+
             float beta = atan2(pr.x(), pr.y());
-            float adv = MAX_ADV_SPEED * dist_to_target() * rotation_speed(beta);
+            float adv = MAX_ADV_SPEED * dist_to_target(target) * rotation_speed(beta);
             try {
                 differentialrobot_proxy->setSpeedBase(adv, beta);
             }
@@ -160,17 +163,29 @@ int SpecificWorker::startup_check()
 	return 0;
 }
 
-QPointF SpecificWorker::world_to_robot(SpecificWorker::Target target, RoboCompGenericBase::TBaseState state) {
+Eigen::Vector2f SpecificWorker::world_to_robot(SpecificWorker::Target target, RoboCompGenericBase::TBaseState state, Eigen::Vector2f robot, Eigen::Vector2f mundo) {
+    Eigen::Matrix2f posicion;
+    posicion <<cos(state.alpha),sin(state.alpha),-sin(state.alpha),cos(state.alpha);
 
-    return QPointF();//crear matriz con eigen 2f . bstate.angle
+    //resta de mundo - robot
+    //QPointF res;
+    //res.setX(target.dest.x()-robot.x());
+    //res.setY(target.dest.y()-robot.y());
+
+    return posicion*(mundo-robot);//crear matriz con eigen 2f . bstate.angle
 }
 
-float SpecificWorker::dist_to_target() {
-    return 0;
+float SpecificWorker::dist_to_target(Target target) {
+    float h,brake;
+    h = sqrt(pow(target.dest.x(),2) + pow(target.dest.y(),2));
+    brake = exp(pow(-h,2));
+    return brake;
 }
 
 float SpecificWorker::rotation_speed(float beta) {
-    return 0;
+    float brake;
+    brake = exp(pow(-beta,2));
+    return brake;
 }
 
 /**************************************/
