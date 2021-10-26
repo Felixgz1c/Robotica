@@ -94,15 +94,10 @@ void SpecificWorker::compute()
     {
         std::cout << ex << std::endl;
     }
-    if(target.activo){
-
+    if(target.activo)
+    {
         Eigen::Vector2f robot_eigen(bState.x,bState.z);
         Eigen::Vector2f target_eigen(target.dest.x(),target.dest.y());
-
-
-        if(float dist=(robot_eigen-target_eigen).norm(); dist > 100) {
-
-
             //si el robot esta en el target ponemos el target a false
 
             /*
@@ -111,19 +106,25 @@ void SpecificWorker::compute()
              * 3. obtener la velocidad de avance (utilizar  como vel de giro) (primero a 0)
              * 4. mover el robot con las vel obtenidas
             */
-            Eigen::Vector2f pr = world_to_robot(target, bState,robot_eigen,target_eigen);
-
-            float beta = atan2(pr.x(), pr.y());
-            float adv = MAX_ADV_SPEED * dist_to_target(target) * rotation_speed(beta);
-            try {
-                differentialrobot_proxy->setSpeedBase(adv, beta);
-            }
-            catch (const Ice::Exception &ex) {
-                std::cout << ex << std::endl;
-            }
-        }
-        else
+        Eigen::Vector2f pr = world_to_robot(bState,robot_eigen,target_eigen);//position of the robot (pr)
+        if (pr.norm()<100)
+        {
             target.activo=false;
+            differentialrobot_proxy->setSpeedBase(0,0);
+            return;
+        }
+
+        float beta = atan2(pr.y(), pr.x());
+        float adv = MAX_ADV_SPEED * dist_to_target(target) * rotation_speed(beta);
+        if(adv>1000)
+            adv=1000;
+        try {
+
+            differentialrobot_proxy->setSpeedBase(adv, beta);
+        }
+        catch (const Ice::Exception &ex) {
+            std::cout << ex << std::endl;
+        }
     }
 }
 
@@ -163,22 +164,23 @@ int SpecificWorker::startup_check()
 	return 0;
 }
 
-Eigen::Vector2f SpecificWorker::world_to_robot(SpecificWorker::Target target, RoboCompGenericBase::TBaseState state, Eigen::Vector2f robot, Eigen::Vector2f mundo) {
+Eigen::Vector2f SpecificWorker::world_to_robot(RoboCompGenericBase::TBaseState state, Eigen::Vector2f robot, Eigen::Vector2f mundo) {
     Eigen::Matrix2f posicion;
     posicion <<cos(state.alpha),sin(state.alpha),-sin(state.alpha),cos(state.alpha);
-
-    //resta de mundo - robot
-    //QPointF res;
-    //res.setX(target.dest.x()-robot.x());
-    //res.setY(target.dest.y()-robot.y());
-
-    return posicion*(mundo-robot);//crear matriz con eigen 2f . bstate.angle
+    return posicion *(mundo-robot);//crear matriz con eigen 2f . bstate.angle
 }
 
 float SpecificWorker::dist_to_target(Target target) {
-    float h,brake;
-    h = sqrt(pow(target.dest.x(),2) + pow(target.dest.y(),2));
-    brake = exp(pow(-h,2));
+
+    float d,brake;
+    d = sqrt(pow(target.dest.x(),2) + pow(target.dest.y(),2));
+    //brake = exp(pow(-h,2)); Gauss version
+
+    if (d>1000){
+        brake=1;
+    }else{
+        brake = (1/1000)*d;
+    }
     return brake;
 }
 

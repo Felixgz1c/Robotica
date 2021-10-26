@@ -204,10 +204,16 @@
 		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/CommonBehavior.cpp.rule">
 			<Option target="gotoxy"/>
 		</Unit>
+		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/CommonBehavior.h">
+			<Option target="gotoxy"/>
+		</Unit>
 		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/DifferentialRobot.cpp">
 			<Option target="gotoxy"/>
 		</Unit>
 		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/DifferentialRobot.cpp.rule">
+			<Option target="gotoxy"/>
+		</Unit>
+		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/DifferentialRobot.h">
 			<Option target="gotoxy"/>
 		</Unit>
 		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/GenericBase.cpp">
@@ -216,10 +222,16 @@
 		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/GenericBase.cpp.rule">
 			<Option target="gotoxy"/>
 		</Unit>
+		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/GenericBase.h">
+			<Option target="gotoxy"/>
+		</Unit>
 		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/Laser.cpp">
 			<Option target="gotoxy"/>
 		</Unit>
 		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/Laser.cpp.rule">
+			<Option target="gotoxy"/>
+		</Unit>
+		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/Laser.h">
 			<Option target="gotoxy"/>
 		</Unit>
 		<Unit filename="/home/alumno/G7-X2/Robotica/prac3/gotoxy/cmake-build-debug/src/gotoxy_autogen/mocs_compilation.cpp">
