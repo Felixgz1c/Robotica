@@ -94,6 +94,7 @@ void SpecificWorker::compute()
     {
         std::cout << ex << std::endl;
     }
+
     if(target.activo)
     {
         Eigen::Vector2f robot_eigen(bState.x,bState.z);
@@ -107,17 +108,16 @@ void SpecificWorker::compute()
              * 4. mover el robot con las vel obtenidas
             */
         Eigen::Vector2f pr = world_to_robot(bState,robot_eigen,target_eigen);//position of the robot (pr)
-        if (pr.norm()<100)
+
+        if (pr.norm()<200)//si el robot ha llegado al punto marcado
         {
-            target.activo=false;
-            differentialrobot_proxy->setSpeedBase(0,0);
+            target.activo=false;//ponemos el target a false (desactivamos el punto marcado)
+            differentialrobot_proxy->setSpeedBase(0,0);//detenemos el robot
             return;
         }
 
-        float beta = atan2(pr.y(), pr.x());
-        float adv = MAX_ADV_SPEED * dist_to_target(target) * rotation_speed(beta);
-        if(adv>1000)
-            adv=1000;
+        float beta = atan2(pr.x(), pr.y());
+        float adv = MAX_ADV_SPEED * dist_to_target(pr) * rotation_speed(beta);
         try {
 
             differentialrobot_proxy->setSpeedBase(adv, beta);
@@ -170,23 +170,17 @@ Eigen::Vector2f SpecificWorker::world_to_robot(RoboCompGenericBase::TBaseState s
     return posicion *(mundo-robot);//crear matriz con eigen 2f . bstate.angle
 }
 
-float SpecificWorker::dist_to_target(Target target) {
-
-    float d,brake;
-    d = sqrt(pow(target.dest.x(),2) + pow(target.dest.y(),2));
-    //brake = exp(pow(-h,2)); Gauss version
-
-    if (d>1000){
-        brake=1;
-    }else{
-        brake = (1/1000)*d;
-    }
-    return brake;
+float SpecificWorker::dist_to_target(Eigen::Vector2f pr) {
+    if(pr.norm()>1000)
+        return 1;
+    else return pr.norm()/1000;
 }
 
 float SpecificWorker::rotation_speed(float beta) {
     float brake;
-    brake = exp(pow(-beta,2));
+    float l;
+    l = pow(0.5,2)/log10f(0.1);
+    brake = exp(pow(-beta,2)/l);
     return brake;
 }
 
