@@ -1,0 +1,12 @@
+import "DifferentialRobot.idsl";
+import "Laser.idsl";
+Component gotoxy
+{
+    Communications
+    {
+        requires DifferentialRobot, Laser;
+    };
+    language Cpp; // or language Python;
+    gui Qt(QWidget);
+};
+

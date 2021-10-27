@@ -1,0 +1,46 @@
+/snap/clion/169/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/alumno/G7-X2/Robotica/prac3/gotoxy
+CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 10.3.0
+-- The CXX compiler identification is GNU 10.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+CMake Warning at src/CMakeLists.txt:5 (MESSAGE):
+  ROBOCOMP variable not set.  Using the default value: /opt/robocomp
+
+
+-- COMPILING WITH QT5
+-- RoboComp root is now set to /opt/robocomp//
+-- 
+-- Ice version: 3.7.3
+-- Found the following Ice libraries:
+--   Ice (required)
+--   IceStorm (required)
+-- The following Ice libraries were not found:
+--   IceUtil (optional)
+-- BU Adding rule to generate /home/alumno/G7-X2/Robotica/prac3/gotoxy/src/CommonBehavior.ice from /opt/robocomp//interfaces/IDSLs/CommonBehavior.idsl
+-- BU Adding rule to generate /home/alumno/G7-X2/Robotica/prac3/gotoxy/src/DifferentialRobot.ice from /opt/robocomp//interfaces/IDSLs/DifferentialRobot.idsl
+-- BU Adding rule to generate /home/alumno/G7-X2/Robotica/prac3/gotoxy/src/GenericBase.ice from /opt/robocomp//interfaces/IDSLs/GenericBase.idsl
+-- BU Adding rule to generate /home/alumno/G7-X2/Robotica/prac3/gotoxy/src/Laser.ice from /opt/robocomp//interfaces/IDSLs/Laser.idsl
+-- BU ice=>h/cpp: Adding rule to generate CommonBehavior.h and CommonBehavior.cpp from /home/alumno/G7-X2/Robotica/prac3/gotoxy/src/CommonBehavior.ice
+-- BU ice=>h/cpp: Adding rule to generate DifferentialRobot.h and DifferentialRobot.cpp from /home/alumno/G7-X2/Robotica/prac3/gotoxy/src/DifferentialRobot.ice
+-- BU ice=>h/cpp: Adding rule to generate GenericBase.h and GenericBase.cpp from /home/alumno/G7-X2/Robotica/prac3/gotoxy/src/GenericBase.ice
+-- BU ice=>h/cpp: Adding rule to generate Laser.h and Laser.cpp from /home/alumno/G7-X2/Robotica/prac3/gotoxy/src/Laser.ice
+-- Generating header file from mainUI.ui
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/alumno/G7-X2/Robotica/prac3/gotoxy
