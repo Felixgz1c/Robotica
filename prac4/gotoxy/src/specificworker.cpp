@@ -99,6 +99,7 @@ void SpecificWorker::compute()
     {
         Eigen::Vector2f robot_eigen(bState.x,bState.z);
         Eigen::Vector2f target_eigen(target.dest.x(),target.dest.y());
+
             //si el robot esta en el target ponemos el target a false
 
             /*
@@ -118,6 +119,8 @@ void SpecificWorker::compute()
 
         float beta = atan2(pr.x(), pr.y());
         float adv = MAX_ADV_SPEED * dist_to_target(pr) * rotation_speed(beta);
+        //prac 4
+        //float dist= dist_to_obstacle( robot_eigen, target_eigen,robot_eigen);
         try {
 
             differentialrobot_proxy->setSpeedBase(adv, beta);
@@ -184,6 +187,15 @@ float SpecificWorker::rotation_speed(float beta) {
     return brake;
 }
 
+float SpecificWorker::dist_to_obstacle(Eigen::Vector2f robot, Eigen::Vector2f target, Eigen::Vector2f obstacle) {
+    float A,B,C,d;
+    A=robot.y()-target.y();
+    B=target.x()-robot.x();
+    C=((robot.x()-target.x())*robot.y())+((target.y()-robot.y())*robot.x());
+    d=fabs(A*obstacle.x()+B*obstacle.y()+C)/sqrt(pow(A,2)+pow(B,2));
+    //d=abs(Ax+By+c)/sqrt(A²+B²)
+    return d;
+}
 /**************************************/
 // From the RoboCompDifferentialRobot you can call this methods:
 // this->differentialrobot_proxy->correctOdometer(...)

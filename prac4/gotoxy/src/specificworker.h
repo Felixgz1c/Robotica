@@ -69,6 +69,8 @@ private:
     float dist_to_target(Eigen::Vector2f pr);
 
     float rotation_speed(float beta);
+
+    float dist_to_obstacle(Eigen::Vector2f robot, Eigen::Vector2f target, Eigen::Vector2f obstacle);
 };
 
 #endif

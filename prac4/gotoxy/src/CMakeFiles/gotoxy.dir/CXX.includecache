@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/alumno/G7-X2/Robotica/prac3/gotoxy/src/specificworker.cpp
+/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/specificworker.cpp
 specificworker.h
-/home/alumno/G7-X2/Robotica/prac3/gotoxy/src/specificworker.h
+/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/specificworker.h
 
-/home/alumno/G7-X2/Robotica/prac3/gotoxy/src/specificworker.h
+/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/specificworker.h
 genericworker.h
 -
 innermodel/innermodel.h
@@ -20,7 +20,7 @@ abstract_graphic_viewer/abstract_graphic_viewer.h
 eigen3/Eigen/Eigen
 -
 
-/home/alumno/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
+/opt/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
 QWidget
 -
 QGraphicsScene
@@ -44,9 +44,9 @@ QGraphicsPolygonItem
 iostream
 -
 
-/home/alumno/robocomp/classes/qlog/qlog.h
+/opt/robocomp/classes/qlog/qlog.h
 config.h
-/home/alumno/robocomp/classes/qlog/config.h
+/opt/robocomp/classes/qlog/config.h
 QtCore
 -
 iostream
