@@ -70,10 +70,14 @@ void SpecificWorker::initialize(int period)
 
 void SpecificWorker::compute()
 {
+    float threshold = 500; // millimeters
+    int frente=0;
     RoboCompGenericBase::TBaseState bState;
+    RoboCompLaser::TLaserData ldata;
     try
     {
-        RoboCompLaser::TLaserData ldata = laser_proxy->getLaserData();
+        ldata = laser_proxy->getLaserData();
+        frente=ldata.size()/2;
         draw_laser(ldata);
 
     }
@@ -108,11 +112,18 @@ void SpecificWorker::compute()
              * 3. obtener la velocidad de avance (utilizar  como vel de giro) (primero a 0)
              * 4. mover el robot con las vel obtenidas
             */
+
+            /*
+             * ldata[0]-ldata[ldata.size()/3] izquierda
+             * ldata[ldata.size()/3]-ldata[ldata.size()*2/3] frente
+             * ldata[ldata.size()*2/3]-ldata[ldata.size()-1] derecha
+             */
         Eigen::Vector2f pr = world_to_robot(bState,robot_eigen,target_eigen);//position of the robot (pr)
 
         if (pr.norm()<200)//si el robot ha llegado al punto marcado
         {
             target.activo=false;//ponemos el target a false (desactivamos el punto marcado)
+            robotState=1;
             differentialrobot_proxy->setSpeedBase(0,0);//detenemos el robot
             return;
         }
@@ -122,8 +133,30 @@ void SpecificWorker::compute()
         //prac 4
         //float dist= dist_to_obstacle( robot_eigen, target_eigen,robot_eigen);
         try {
+            switch(robotState) {
+                case 1://IDLE. Waiting for target, when target.active = true -> move to FORWARD
+                    if(target.activo)
+                        robotState=2;
+                    break;
+                case 2://FORWARD. Straight forward movement until obstacle too close or we arrive at target. ->move to TURN OR IDLE
+                    differentialrobot_proxy->setSpeedBase(adv, beta);
+                    if(ldata[frente].dist>0 && ldata[frente].dist < threshold ){
+                        differentialrobot_proxy->setSpeedBase(0,0);
+                        robotState=3;
+                    }
+                    break;
+                case 3://TURN. We turn until front is free to advance, -> move to BORDER
+                    differentialrobot_proxy->setSpeedBase(0.4,0);
+                    if(ldata[frente].dist>1000){
+                        differentialrobot_proxy->setSpeedBase(0,0);
+                        robotState=4;
+                    }
+                    break;
+                case 4://BORDER. Follow the obstacle siluete until target is in sight. -> move to FORWARD
 
-            differentialrobot_proxy->setSpeedBase(adv, beta);
+                    break;
+            }
+            //differentialrobot_proxy->setSpeedBase(adv, beta);
         }
         catch (const Ice::Exception &ex) {
             std::cout << ex << std::endl;

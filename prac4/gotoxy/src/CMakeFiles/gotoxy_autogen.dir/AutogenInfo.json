@@ -1,12 +1,12 @@
 {
-	"BUILD_DIR" : "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/gotoxy_autogen",
-	"CMAKE_BINARY_DIR" : "/home/alumno/G7-X2/Robotica/prac4/gotoxy",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src",
+	"BUILD_DIR" : "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/gotoxy_autogen",
+	"CMAKE_BINARY_DIR" : "/home/felixgz/G7-X2/Robotica/prac4/gotoxy",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src",
 	"CMAKE_EXECUTABLE" : "/snap/clion/169/bin/cmake/linux/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeLists.txt",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeLists.txt",
 		"/opt/robocomp/cmake/robocomp.cmake",
 		"/opt/robocomp/cmake/modules/qt.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake",
@@ -68,7 +68,7 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Network/Qt5Network_QConnmanEnginePlugin.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Network/Qt5Network_QNetworkManagerEnginePlugin.cmake",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeListsSpecific.txt",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeListsSpecific.txt",
 		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindThreads.cmake",
 		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CheckLibraryExists.cmake",
 		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CheckIncludeFile.cmake",
@@ -86,37 +86,37 @@
 		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake",
 		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/FindPackageMessage.cmake"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/alumno/G7-X2/Robotica/prac4/gotoxy",
+	"CMAKE_SOURCE_DIR" : "/home/felixgz/G7-X2/Robotica/prac4/gotoxy",
 	"DEP_FILE" : "",
 	"DEP_FILE_RULE_NAME" : "",
 	"HEADERS" : 
 	[
 		[
-			"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/commonbehaviorI.h",
+			"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/commonbehaviorI.h",
 			"MU",
 			"EWIEGA46WW/moc_commonbehaviorI.cpp",
 			null
 		],
 		[
-			"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/genericmonitor.h",
+			"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/genericmonitor.h",
 			"MU",
 			"EWIEGA46WW/moc_genericmonitor.cpp",
 			null
 		],
 		[
-			"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/genericworker.h",
+			"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/genericworker.h",
 			"MU",
 			"EWIEGA46WW/moc_genericworker.cpp",
 			null
 		],
 		[
-			"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/specificmonitor.h",
+			"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/specificmonitor.h",
 			"MU",
 			"EWIEGA46WW/moc_specificmonitor.cpp",
 			null
 		],
 		[
-			"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/specificworker.h",
+			"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/specificworker.h",
 			"MU",
 			"EWIEGA46WW/moc_specificworker.cpp",
 			null
@@ -147,8 +147,8 @@
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/gotoxy_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/gotoxy_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/gotoxy_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/gotoxy_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"QT_CORE_LIB",
@@ -169,11 +169,11 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src",
 		"/opt/robocomp/include",
 		"/classes",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy",
 		"/opt/robocomp/classes",
 		"/opt/robocomp/libs",
 		"/opt/robocomp/interfaces",
@@ -188,10 +188,10 @@
 		"/usr/include/x86_64-linux-gnu/qt5/QtXml",
 		"/usr/include/x86_64-linux-gnu/qt5/QtXmlPatterns",
 		"/usr/include/x86_64-linux-gnu/qt5/QtNetwork",
-		"/usr/include/c++/10",
-		"/usr/include/x86_64-linux-gnu/c++/10",
-		"/usr/include/c++/10/backward",
-		"/usr/lib/gcc/x86_64-linux-gnu/10/include",
+		"/usr/include/c++/9",
+		"/usr/include/x86_64-linux-gnu/c++/9",
+		"/usr/include/c++/9/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
 		"/usr/local/include",
 		"/usr/include/x86_64-linux-gnu",
 		"/usr/include"
@@ -207,49 +207,49 @@
 		"-c",
 		"/snap/clion/169/bin/cmake/linux/share/cmake-3.20/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/gotoxy_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/gotoxy_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CommonBehavior.cpp",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/DifferentialRobot.cpp",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/GenericBase.cpp",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/Laser.cpp",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/ui_mainUI.h"
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CommonBehavior.cpp",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/DifferentialRobot.cpp",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/GenericBase.cpp",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/Laser.cpp",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/ui_mainUI.h"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 8,
-	"PARSE_CACHE_FILE" : "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 12,
-	"SETTINGS_FILE" : "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/commonbehaviorI.cpp",
+			"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/commonbehaviorI.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/genericmonitor.cpp",
+			"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/genericmonitor.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/genericworker.cpp",
+			"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/genericworker.cpp",
 			"MU",
 			null
 		],
-		[ "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/main.cpp", "MU", null ],
+		[ "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/main.cpp", "MU", null ],
 		[
-			"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/specificmonitor.cpp",
+			"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/specificmonitor.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/specificworker.cpp",
+			"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/specificworker.cpp",
 			"MU",
 			null
 		],
@@ -261,12 +261,12 @@
 	"UIC_SEARCH_PATHS" : [],
 	"UIC_SKIP" : 
 	[
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CommonBehavior.cpp",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/DifferentialRobot.cpp",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/GenericBase.cpp",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/Laser.cpp",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/mainUI.ui",
-		"/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/ui_mainUI.h"
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CommonBehavior.cpp",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/DifferentialRobot.cpp",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/GenericBase.cpp",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/Laser.cpp",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/mainUI.ui",
+		"/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/ui_mainUI.h"
 	],
 	"UIC_UI_FILES" : [],
 	"VERBOSITY" : 0

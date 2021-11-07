@@ -63,7 +63,7 @@ private:
     QGraphicsPolygonItem *robot_polygon;
     QGraphicsRectItem *laser_in_robot_polygon;
     QPointF last_point;
-
+    int robotState;//values 1(IDLE), 2(FORWARD), 3(TURN), 4(BORDER)
     Eigen::Vector2f world_to_robot(RoboCompGenericBase::TBaseState state, Eigen::Vector2f robot, Eigen::Vector2f mundo);
 
     float dist_to_target(Eigen::Vector2f pr);
