@@ -1,27 +1,23 @@
-
-# Consider dependencies only in project.
-set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
-
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
   "CXX"
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CommonBehavior.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/DifferentialRobot.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/GenericBase.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/Laser.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/Laser.cpp.o"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/commonbehaviorI.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/genericmonitor.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/genericworker.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/genericworker.cpp.o"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/gotoxy_autogen/mocs_compilation.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/main.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/main.cpp.o"
-  "/opt/robocomp/classes/qlog/qlog.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/qlog/qlog.cpp.o"
-  "/opt/robocomp/classes/rapplication/rapplication.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o"
-  "/opt/robocomp/classes/sigwatch/sigwatch.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/specificmonitor.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/specificworker.cpp" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/specificworker.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CommonBehavior.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/DifferentialRobot.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/GenericBase.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/Laser.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/Laser.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/commonbehaviorI.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/genericmonitor.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/genericworker.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/genericworker.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/gotoxy_autogen/mocs_compilation.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o"
+  "/home/alumno/robocomp/classes/qlog/qlog.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o"
+  "/home/alumno/robocomp/classes/rapplication/rapplication.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o"
+  "/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/main.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/main.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/specificmonitor.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/specificworker.cpp" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CMakeFiles/gotoxy.dir/specificworker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -45,9 +41,9 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/robocomp/include"
   "/classes"
   "."
-  "/opt/robocomp/classes"
-  "/opt/robocomp/libs"
-  "/opt/robocomp/interfaces"
+  "/home/alumno/robocomp/classes"
+  "/home/alumno/robocomp/libs"
+  "/home/alumno/robocomp/interfaces"
   "/include"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtGui"
@@ -61,16 +57,12 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/x86_64-linux-gnu/qt5/QtNetwork"
   )
 
-# The set of dependency files which are needed:
-set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  )
-
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CommonBehavior.h" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/CommonBehavior.cpp"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/DifferentialRobot.h" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/DifferentialRobot.cpp"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/GenericBase.h" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/GenericBase.cpp"
-  "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/Laser.h" "/home/felixgz/G7-X2/Robotica/prac4/gotoxy/src/Laser.cpp"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CommonBehavior.h" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/CommonBehavior.cpp"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/DifferentialRobot.h" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/DifferentialRobot.cpp"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/GenericBase.h" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/GenericBase.cpp"
+  "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/Laser.h" "/home/alumno/G7-X2/Robotica/prac4/gotoxy/src/Laser.cpp"
   )
 
 
