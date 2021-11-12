@@ -67,10 +67,13 @@ private:
     Eigen::Vector2f world_to_robot(RoboCompGenericBase::TBaseState state, Eigen::Vector2f robot, Eigen::Vector2f mundo);
 
     float dist_to_target(Eigen::Vector2f pr);
-
     float rotation_speed(float beta);
 
-    float dist_to_obstacle(Eigen::Vector2f robot, Eigen::Vector2f target, Eigen::Vector2f obstacle);
+    float dist_to_line(float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState);
+
+    void forward(Eigen::Vector2f robot,Eigen::Vector2f target,RoboCompLaser::TLaserData &laser,RoboCompGenericBase::TBaseState bState);
+    void border(float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState);
+    void turn(RoboCompLaser::TLaserData &laser);
 };
 
 #endif

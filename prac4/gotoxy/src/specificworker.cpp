@@ -71,74 +71,42 @@ void SpecificWorker::initialize(int period)
 
 void SpecificWorker::compute()
 {
-    float threshold = 500; // millimeters
-    int frente=0;
-    RoboCompGenericBase::TBaseState bState;
-    RoboCompLaser::TLaserData ldata;
-    try
-    {
+    try {
+        RoboCompGenericBase::TBaseState bState;
+        RoboCompLaser::TLaserData ldata;
         ldata = laser_proxy->getLaserData();
-        frente=ldata.size()/2;
         draw_laser(ldata);
-    }
-    catch(const Ice::Exception &ex)
-    {
-        std::cout << ex << std::endl;
-    }
-
-    try
-    {
         differentialrobot_proxy->getBaseState(bState);
         robot_polygon->setRotation(bState.alpha*180/M_PI);
         robot_polygon->setPos(bState.x, bState.z);
-    }
-    catch(const Ice::Exception &ex)
-    {
-        std::cout << ex << std::endl;
-    }
-    try {
+        float A,B,C;
+
         switch(robotState) {
             case 1://IDLE. Waiting for target, when target.active = true -> move to FORWARD
-                printf("IDLE............");
-                if(target.activo){
-                    robotState=2;
+                printf("IDLE............\n");
+                if (target.activo) {
+                    A=bState.z-target.dest.y();
+                    B=target.dest.x()-bState.x;
+                    C=((bState.x-target.dest.x())*bState.z)+((target.dest.y()-bState.z)*bState.x);
+                    robotState = 2;
                 }
-            break;
+                break;
             case 2://FORWARD. Straight forward movement until obstacle too close or we arrive at target. ->move to TURN OR IDLE
             {
-                printf("FORWARD............");
+                printf("FORWARD............\n");
                 Eigen::Vector2f robot_eigen(bState.x, bState.z);
                 Eigen::Vector2f target_eigen(target.dest.x(), target.dest.y());
-                Eigen::Vector2f pr = world_to_robot(bState, robot_eigen, target_eigen);//position of the robot (pr)
-
-                float beta = atan2(pr.x(), pr.y());
-                float adv = MAX_ADV_SPEED * dist_to_target(pr) * rotation_speed(beta);
-                printf ("La velocidades son: %f y %f",adv, beta);
-                differentialrobot_proxy->setSpeedBase(adv, beta);
-
-                if (ldata[frente].dist > 0 && ldata[frente].dist < threshold) {
-                    differentialrobot_proxy->setSpeedBase(0, 0);
-                    robotState = 3;
-                }
-                if (pr.norm() < 200)//si el robot ha llegado al punto marcado
-                {
-                    target.activo = false;//ponemos el target a false (desactivamos el punto marcado)
-                    robotState = 1;
-                    differentialrobot_proxy->setSpeedBase(0, 0);//detenemos el robot
-                }
+                forward(robot_eigen, target_eigen, ldata, bState);
             }
-            break;
+                break;
             case 3://TURN. We turn until front is free to advance, -> move to BORDER
-                differentialrobot_proxy->setSpeedBase(0,0.5);
-                if(ldata[165].dist>1500 && ldata[45].dist<45){
-                    differentialrobot_proxy->setSpeedBase(0,0);
-                    robotState=4;
-                }
-            break;
+                printf("TURN............\n");
+                turn(ldata);
+                break;
             case 4://BORDER. Follow the obstacle siluette until target is in sight or line(Ax+By*C) is in sight. -> move to FORWARD
-              //  float obj= dist_to_obstacle(robot_eigen,target_eigen,robot_eigen);
-
-            break;
+                printf("BORDER............\n");
+                border(A,B,C,bState);
+                break;
             }
             //differentialrobot_proxy->setSpeedBase(adv, beta);
         }
@@ -203,14 +171,46 @@ float SpecificWorker::rotation_speed(float beta) {
     return brake;
 }
 
-float SpecificWorker::dist_to_obstacle(Eigen::Vector2f robot, Eigen::Vector2f target, Eigen::Vector2f obstacle) {
-    float A,B,C,d;
-    A=robot.y()-target.y();
-    B=target.x()-robot.x();
-    C=((robot.x()-target.x())*robot.y())+((target.y()-robot.y())*robot.x());
-    d=fabs(A*obstacle.x()+B*obstacle.y()+C)/sqrt(pow(A,2)+pow(B,2));
-    //d=abs(Ax+By+c)/sqrt(A²+B²)
-    return d;
+float SpecificWorker::dist_to_line(float &A, float &B, float &C, RoboCompGenericBase::TBaseState bState) {
+
+    return fabs(A*bState.x+B*bState.z+C)/sqrt(pow(A,2)+pow(B,2));
+}
+
+void SpecificWorker::turn(RoboCompLaser::TLaserData &laser){
+    printf("distancia izqda: %f\n",laser[45].dist);
+    printf("distancia frente: %f\n",laser[laser.size()/2].dist);
+    differentialrobot_proxy->setSpeedBase(0,0.5);
+    if(laser[45].dist< 550 && laser[laser.size()/2].dist>1500){
+        robotState=4;
+        differentialrobot_proxy->setSpeedBase(0,0);
+    }
+}
+
+void SpecificWorker::forward(Eigen::Vector2f robot_eigen,Eigen::Vector2f target_eigen,RoboCompLaser::TLaserData &laser,RoboCompGenericBase::TBaseState bState){
+    float frente=laser.size()/2;
+    float threshold=500;
+
+    Eigen::Vector2f pr = world_to_robot(bState, robot_eigen, target_eigen);//position of the robot (pr)
+
+    float beta = atan2(pr.x(), pr.y());
+    float adv = MAX_ADV_SPEED * dist_to_target(pr) * rotation_speed(beta);
+    printf ("La velocidades son: %f y %f",adv, beta);
+    differentialrobot_proxy->setSpeedBase(adv, beta);
+
+    if (laser[frente].dist > 0 && laser[frente].dist < threshold) {
+        differentialrobot_proxy->setSpeedBase(0, 0);
+        robotState = 3;
+    }
+    if (pr.norm() < 200)//si el robot ha llegado al punto marcado
+    {
+        target.activo = false;//ponemos el target a false (desactivamos el punto marcado)
+        robotState = 1;
+        differentialrobot_proxy->setSpeedBase(0, 0);//detenemos el robot
+    }
+}
+
+void SpecificWorker::border(float &A, float &B, float &C, RoboCompGenericBase::TBaseState bState){
+
 }
 /**************************************/
 // From the RoboCompDifferentialRobot you can call this methods:
