@@ -159,6 +159,8 @@ abstract_graphic_viewer/abstract_graphic_viewer.h
 -
 eigen3/Eigen/Eigen
 -
+cppitertools/range.hpp
+-
 
 /opt/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
 QWidget

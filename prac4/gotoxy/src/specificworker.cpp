@@ -104,8 +104,12 @@ void SpecificWorker::compute()
                 turn(ldata);
                 break;
             case 4://BORDER. Follow the obstacle siluette until target is in sight or line(Ax+By*C) is in sight. -> move to FORWARD
+            {
                 printf("BORDER............\n");
-                border(A,B,C,bState);
+                Eigen::Vector2f robot_eigen(bState.x, bState.z);
+                Eigen::Vector2f target_eigen(target.dest.x(), target.dest.y());
+                border(A, B, C, bState, robot_eigen, target_eigen);
+            }
                 break;
             }
             //differentialrobot_proxy->setSpeedBase(adv, beta);
@@ -171,7 +175,7 @@ float SpecificWorker::rotation_speed(float beta) {
     return brake;
 }
 
-float SpecificWorker::dist_to_line(float &A, float &B, float &C, RoboCompGenericBase::TBaseState bState) {
+float SpecificWorker::dist_to_line(float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState) {
 
     return fabs(A*bState.x+B*bState.z+C)/sqrt(pow(A,2)+pow(B,2));
 }
@@ -209,9 +213,65 @@ void SpecificWorker::forward(Eigen::Vector2f robot_eigen,Eigen::Vector2f target_
     }
 }
 
-void SpecificWorker::border(float &A, float &B, float &C, RoboCompGenericBase::TBaseState bState){
+void SpecificWorker::border(float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState,Eigen::Vector2f robot, Eigen::Vector2f &mundo){
 
 }
+
+void SpecificWorker::check_free_path_to_target( const RoboCompLaser::TLaserData &ldata, RoboCompGenericBase::TBaseState &bState,
+                                                Eigen::Vector2f robotpos, Eigen::Vector2f &mundo) {
+    // lambda to convert from Eigen to QPointF
+    auto toQPointF = [](const Eigen::Vector2f &p) { return QPointF(p.x(), p.y()); };
+
+    // create polyggon
+    QPolygonF pol;
+    pol << QPointF(0, 0);
+    for (const auto &l: ldata)
+        pol << QPointF(l.dist * sin(l.angle), l.dist * cos(l.angle));
+
+    // create tube lines
+    auto goal_r = world_to_robot(bState, robotpos, mundo);
+    Eigen::Vector2f robot(0.0, 0.0);
+    // number of parts the target vector is divided into
+    float parts = (goal_r).norm() / (ROBOT_LENGTH / 4);
+    Eigen::Vector2f rside(220, 200);
+    Eigen::Vector2f lside(-220, 200);
+    if (parts < 1) return;
+
+    QPointF p, q, r;
+    for (auto l: iter::range(0.0, 1.0, 1.0 / parts)) {
+        p = toQPointF(robot * (1 - l) + goal_r * l);
+        q = toQPointF((robot + rside) * (1 - l) + (goal_r + rside) * l);
+        r = toQPointF((robot + lside) * (1 - l) + (goal_r + lside) * l);
+        if (not pol.containsPoint(p, Qt::OddEvenFill) or
+            not pol.containsPoint(q, Qt::OddEvenFill) or
+            not pol.containsPoint(r, Qt::OddEvenFill))
+            break;
+    }
+
+    // draw
+    QLineF line_center(toQPointF(from_robot_to_world(robot)), toQPointF(from_robot_to_world(Eigen::Vector2f(p.x(),p.y()))));
+    QLineF line_right(toQPointF(from_robot_to_world(robot+rside)), toQPointF(from_robot_to_world(Eigen::Vector2f(q.x(),q.y()))));
+    QLineF line_left(toQPointF(from_robot_to_world(robot+lside)), toQPointF(from_robot_to_world(Eigen::Vector2f(r.x(),r.y()))));
+    static QGraphicsItem *graphics_line_center = nullptr;
+    static QGraphicsItem *graphics_line_right = nullptr;
+    static QGraphicsItem *graphics_line_left = nullptr;
+    static QGraphicsItem *graphics_target = nullptr;
+    if (graphics_line_center != nullptr)
+        viewer->scene.removeItem(graphics_line_center);
+    if (graphics_line_right != nullptr)
+        viewer->scene.removeItem(graphics_line_right);
+    if (graphics_line_left != nullptr)
+        viewer->scene.removeItem(graphics_line_left);
+    if (graphics_target != nullptr)
+        viewer->scene.removeItem(graphics_target);
+    graphics_line_center = viewer->scene.addLine(line_center, QPen(QColor("Blue"), 30));
+    graphics_line_right = viewer->scene.addLine(line_right, QPen(QColor("Orange"), 30));
+    graphics_line_left = viewer->scene.addLine(line_left, QPen(QColor("Magenta"), 30));
+    graphics_target = viewer->scene.addEllipse(-100, -100, 200, 200, QPen(QColor("Blue")), QBrush(QColor("Blue")));
+    graphics_target->setPos(mundo.x(), mundo.y());
+
+}
+
 /**************************************/
 // From the RoboCompDifferentialRobot you can call this methods:
 // this->differentialrobot_proxy->correctOdometer(...)
@@ -237,4 +297,3 @@ void SpecificWorker::border(float &A, float &B, float &C, RoboCompGenericBase::T
 // From the RoboCompLaser you can use this types:
 // RoboCompLaser::LaserConfData
 // RoboCompLaser::TData
-

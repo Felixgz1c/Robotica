@@ -31,6 +31,7 @@
 #include <innermodel/innermodel.h>
 #include <abstract_graphic_viewer/abstract_graphic_viewer.h>
 #include <eigen3/Eigen/Eigen>
+#include <cppitertools/range.hpp>
 
 class SpecificWorker : public GenericWorker
 {
@@ -72,8 +73,12 @@ private:
     float dist_to_line(float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState);
 
     void forward(Eigen::Vector2f robot,Eigen::Vector2f target,RoboCompLaser::TLaserData &laser,RoboCompGenericBase::TBaseState bState);
-    void border(float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState);
+    void border(float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState,
+                Eigen::Vector2f robot, Eigen::Vector2f &mundo);
     void turn(RoboCompLaser::TLaserData &laser);
+
+    void check_free_path_to_target( const RoboCompLaser::TLaserData &ldata,RoboCompGenericBase::TBaseState &bState,
+                                    Eigen::Vector2f robot, Eigen::Vector2f &mundo);
 };
 
 #endif
