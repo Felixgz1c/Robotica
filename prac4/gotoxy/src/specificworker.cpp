@@ -94,9 +94,8 @@ void SpecificWorker::compute()
             case 2://FORWARD. Straight forward movement until obstacle too close or we arrive at target. ->move to TURN OR IDLE
             {
                 printf("FORWARD............\n");
-                Eigen::Vector2f robot_eigen(bState.x, bState.z);
                 Eigen::Vector2f target_eigen(target.dest.x(), target.dest.y());
-                forward(robot_eigen, target_eigen, ldata, bState);
+                forward(target_eigen, ldata, bState);
             }
                 break;
             case 3://TURN. We turn until front is free to advance, -> move to BORDER
@@ -108,7 +107,7 @@ void SpecificWorker::compute()
                 printf("BORDER............\n");
                 Eigen::Vector2f robot_eigen(bState.x, bState.z);
                 Eigen::Vector2f target_eigen(target.dest.x(), target.dest.y());
-                border(A, B, C, bState, robot_eigen, target_eigen);
+                border(ldata, A, B, C, bState, target_eigen);
             }
                 break;
             }
@@ -155,16 +154,24 @@ int SpecificWorker::startup_check()
 	return 0;
 }
 
-Eigen::Vector2f SpecificWorker::world_to_robot(RoboCompGenericBase::TBaseState state, Eigen::Vector2f robot, Eigen::Vector2f mundo) {
+Eigen::Vector2f SpecificWorker::world_to_robot(RoboCompGenericBase::TBaseState bState,Eigen::Vector2f mundo) {
+    Eigen::Vector2f robpos(bState.x, bState.z);
     Eigen::Matrix2f posicion;
-    posicion <<cos(state.alpha),sin(state.alpha),-sin(state.alpha),cos(state.alpha);
-    return posicion *(mundo-robot);//crear matriz con eigen 2f . bstate.angle
+    posicion <<cos(bState.alpha),sin(bState.alpha),-sin(bState.alpha),cos(bState.alpha);
+    return posicion *(mundo-robpos);//crear matriz con eigen 2f . bstate.angle
+}
+
+Eigen::Vector2f SpecificWorker::robot_to_world(RoboCompGenericBase::TBaseState bState, Eigen::Vector2f mundo){
+    Eigen::Vector2f robpos(bState.x,bState.z);
+    Eigen::Matrix2f posicion;
+    posicion <<cos (bState.alpha),-sin(bState.alpha) , sin(bState.alpha), cos(bState.alpha);
+    return posicion.transpose().inverse()* mundo+robpos;
 }
 
 float SpecificWorker::dist_to_target(Eigen::Vector2f pr) {
-    if(pr.norm()>1000)
+    if(pr.norm()>1200)
         return 1;
-    else return pr.norm()/1000;
+    else return pr.norm()/1200;
 }
 
 float SpecificWorker::rotation_speed(float beta) {
@@ -184,24 +191,22 @@ void SpecificWorker::turn(RoboCompLaser::TLaserData &laser){
     printf("distancia izqda: %f\n",laser[45].dist);
     printf("distancia frente: %f\n",laser[laser.size()/2].dist);
     differentialrobot_proxy->setSpeedBase(0,0.5);
-    if(laser[45].dist< 550 && laser[laser.size()/2].dist>1500){
+    if(laser[45].dist< 550 && laser[135].dist>1500){
         robotState=4;
         differentialrobot_proxy->setSpeedBase(0,0);
     }
 }
 
-void SpecificWorker::forward(Eigen::Vector2f robot_eigen,Eigen::Vector2f target_eigen,RoboCompLaser::TLaserData &laser,RoboCompGenericBase::TBaseState bState){
+void SpecificWorker::forward(Eigen::Vector2f target_eigen,RoboCompLaser::TLaserData &laser,RoboCompGenericBase::TBaseState bState){
     float frente=laser.size()/2;
-    float threshold=500;
-
-    Eigen::Vector2f pr = world_to_robot(bState, robot_eigen, target_eigen);//position of the robot (pr)
+    Eigen::Vector2f pr = world_to_robot(bState, target_eigen);//position of the robot (pr)
 
     float beta = atan2(pr.x(), pr.y());
     float adv = MAX_ADV_SPEED * dist_to_target(pr) * rotation_speed(beta);
     printf ("La velocidades son: %f y %f",adv, beta);
     differentialrobot_proxy->setSpeedBase(adv, beta);
 
-    if (laser[frente].dist > 0 && laser[frente].dist < threshold) {
+    if (laser[frente].dist > 0 && laser[frente].dist < 600) {
         differentialrobot_proxy->setSpeedBase(0, 0);
         robotState = 3;
     }
@@ -213,12 +218,17 @@ void SpecificWorker::forward(Eigen::Vector2f robot_eigen,Eigen::Vector2f target_
     }
 }
 
-void SpecificWorker::border(float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState,Eigen::Vector2f robot, Eigen::Vector2f &mundo){
+void SpecificWorker::border(RoboCompLaser::TLaserData &laser, float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState, Eigen::Vector2f &mundo){
 
+        if (laser[45].dist > 300)
+            differentialrobot_proxy->setSpeedBase(400, -0.4);
+        else if (laser[45].dist < 300)
+            differentialrobot_proxy->setSpeedBase(400, 0.4);
+        else
+            differentialrobot_proxy->setSpeedBase(400, 0);
 }
 
-void SpecificWorker::check_free_path_to_target( const RoboCompLaser::TLaserData &ldata, RoboCompGenericBase::TBaseState &bState,
-                                                Eigen::Vector2f robotpos, Eigen::Vector2f &mundo) {
+void SpecificWorker::check_free_path_to_target( const RoboCompLaser::TLaserData &ldata, RoboCompGenericBase::TBaseState &bState, Eigen::Vector2f &mundo) {
     // lambda to convert from Eigen to QPointF
     auto toQPointF = [](const Eigen::Vector2f &p) { return QPointF(p.x(), p.y()); };
 
@@ -229,7 +239,7 @@ void SpecificWorker::check_free_path_to_target( const RoboCompLaser::TLaserData 
         pol << QPointF(l.dist * sin(l.angle), l.dist * cos(l.angle));
 
     // create tube lines
-    auto goal_r = world_to_robot(bState, robotpos, mundo);
+    auto goal_r = world_to_robot(bState, mundo);
     Eigen::Vector2f robot(0.0, 0.0);
     // number of parts the target vector is divided into
     float parts = (goal_r).norm() / (ROBOT_LENGTH / 4);
@@ -247,11 +257,10 @@ void SpecificWorker::check_free_path_to_target( const RoboCompLaser::TLaserData 
             not pol.containsPoint(r, Qt::OddEvenFill))
             break;
     }
-
     // draw
-    QLineF line_center(toQPointF(from_robot_to_world(robot)), toQPointF(from_robot_to_world(Eigen::Vector2f(p.x(),p.y()))));
-    QLineF line_right(toQPointF(from_robot_to_world(robot+rside)), toQPointF(from_robot_to_world(Eigen::Vector2f(q.x(),q.y()))));
-    QLineF line_left(toQPointF(from_robot_to_world(robot+lside)), toQPointF(from_robot_to_world(Eigen::Vector2f(r.x(),r.y()))));
+    QLineF line_center(toQPointF(robot_to_world(bState,robot)), toQPointF(robot_to_world(bState,Eigen::Vector2f(p.x(),p.y()))));
+    QLineF line_right(toQPointF(robot_to_world(bState,robot+rside)), toQPointF(robot_to_world(bState,Eigen::Vector2f(q.x(),q.y()))));
+    QLineF line_left(toQPointF(robot_to_world(bState,robot+lside)), toQPointF(robot_to_world(bState,Eigen::Vector2f(r.x(),r.y()))));
     static QGraphicsItem *graphics_line_center = nullptr;
     static QGraphicsItem *graphics_line_right = nullptr;
     static QGraphicsItem *graphics_line_left = nullptr;

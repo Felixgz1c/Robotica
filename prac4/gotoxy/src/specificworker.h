@@ -65,20 +65,19 @@ private:
     QGraphicsRectItem *laser_in_robot_polygon;
     QPointF last_point;
     int robotState;//values 1(IDLE), 2(FORWARD), 3(TURN), 4(BORDER)
-    Eigen::Vector2f world_to_robot(RoboCompGenericBase::TBaseState state, Eigen::Vector2f robot, Eigen::Vector2f mundo);
+    Eigen::Vector2f world_to_robot(RoboCompGenericBase::TBaseState bState, Eigen::Vector2f mundo);
+    Eigen::Vector2f robot_to_world(RoboCompGenericBase::TBaseState bState, Eigen::Vector2f mundo);
 
     float dist_to_target(Eigen::Vector2f pr);
     float rotation_speed(float beta);
 
     float dist_to_line(float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState);
 
-    void forward(Eigen::Vector2f robot,Eigen::Vector2f target,RoboCompLaser::TLaserData &laser,RoboCompGenericBase::TBaseState bState);
-    void border(float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState,
-                Eigen::Vector2f robot, Eigen::Vector2f &mundo);
+    void forward(Eigen::Vector2f target,RoboCompLaser::TLaserData &laser,RoboCompGenericBase::TBaseState bState);
+    void border(RoboCompLaser::TLaserData &laser, float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState, Eigen::Vector2f &mundo);
     void turn(RoboCompLaser::TLaserData &laser);
 
-    void check_free_path_to_target( const RoboCompLaser::TLaserData &ldata,RoboCompGenericBase::TBaseState &bState,
-                                    Eigen::Vector2f robot, Eigen::Vector2f &mundo);
+    void check_free_path_to_target( const RoboCompLaser::TLaserData &ldata,RoboCompGenericBase::TBaseState &bState, Eigen::Vector2f &mundo);
 };
 
 #endif
