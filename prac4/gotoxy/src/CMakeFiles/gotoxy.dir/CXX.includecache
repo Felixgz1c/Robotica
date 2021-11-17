@@ -17,7 +17,7 @@ innermodel/innermodel.h
 -
 abstract_graphic_viewer/abstract_graphic_viewer.h
 -
-eigen3/Eigen/Eigen
+Eigen/Dense
 -
 cppitertools/range.hpp
 -

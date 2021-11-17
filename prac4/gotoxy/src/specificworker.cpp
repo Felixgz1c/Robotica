@@ -79,7 +79,6 @@ void SpecificWorker::compute()
         differentialrobot_proxy->getBaseState(bState);
         robot_polygon->setRotation(bState.alpha*180/M_PI);
         robot_polygon->setPos(bState.x, bState.z);
-        float A,B,C;
 
         switch(robotState) {
             case 1://IDLE. Waiting for target, when target.active = true -> move to FORWARD
@@ -88,7 +87,7 @@ void SpecificWorker::compute()
                     A=bState.z-target.dest.y();
                     B=target.dest.x()-bState.x;
                     C=((bState.x-target.dest.x())*bState.z)+((target.dest.y()-bState.z)*bState.x);
-                    robotState = 2;
+                    robotState = 2;//FORWARD
                 }
                 break;
             case 2://FORWARD. Straight forward movement until obstacle too close or we arrive at target. ->move to TURN OR IDLE
@@ -189,10 +188,10 @@ float SpecificWorker::dist_to_line(float &A, float &B, float &C, RoboCompGeneric
 
 void SpecificWorker::turn(RoboCompLaser::TLaserData &laser){
     printf("distancia izqda: %f\n",laser[45].dist);
-    printf("distancia frente: %f\n",laser[laser.size()/2].dist);
+    printf("distancia 60º izqda: %f\n",laser[135].dist);
     differentialrobot_proxy->setSpeedBase(0,0.5);
     if(laser[45].dist< 550 && laser[135].dist>1500){
-        robotState=4;
+        robotState=4;//BORDER
         differentialrobot_proxy->setSpeedBase(0,0);
     }
 }
@@ -203,29 +202,36 @@ void SpecificWorker::forward(Eigen::Vector2f target_eigen,RoboCompLaser::TLaserD
 
     float beta = atan2(pr.x(), pr.y());
     float adv = MAX_ADV_SPEED * dist_to_target(pr) * rotation_speed(beta);
-    printf ("La velocidades son: %f y %f",adv, beta);
+    printf ("La velocidades son: %f y %f\n",adv, beta);
     differentialrobot_proxy->setSpeedBase(adv, beta);
 
     if (laser[frente].dist > 0 && laser[frente].dist < 600) {
         differentialrobot_proxy->setSpeedBase(0, 0);
-        robotState = 3;
+        robotState = 3;//TURN
     }
     if (pr.norm() < 200)//si el robot ha llegado al punto marcado
     {
         target.activo = false;//ponemos el target a false (desactivamos el punto marcado)
-        robotState = 1;
+        robotState = 1;//IDLE
         differentialrobot_proxy->setSpeedBase(0, 0);//detenemos el robot
     }
 }
 
 void SpecificWorker::border(RoboCompLaser::TLaserData &laser, float &A, float &B, float &C, RoboCompGenericBase::TBaseState &bState, Eigen::Vector2f &mundo){
 
-        if (laser[45].dist > 300)
-            differentialrobot_proxy->setSpeedBase(400, -0.4);
-        else if (laser[45].dist < 300)
-            differentialrobot_proxy->setSpeedBase(400, 0.4);
+    if(dist_to_line(A,B,C,bState)<50){
+        differentialrobot_proxy->setSpeedBase(0, 0);
+        robotState=2;//FORWARD
+    }
+
+    else {
+        if (laser[45].dist > 500 )
+            differentialrobot_proxy->setSpeedBase(300, -0.4);
+        else if (laser[45].dist < 500)
+            differentialrobot_proxy->setSpeedBase(300, 0.4);
         else
-            differentialrobot_proxy->setSpeedBase(400, 0);
+            differentialrobot_proxy->setSpeedBase(300, 0);
+    }
 }
 
 void SpecificWorker::check_free_path_to_target( const RoboCompLaser::TLaserData &ldata, RoboCompGenericBase::TBaseState &bState, Eigen::Vector2f &mundo) {
@@ -281,6 +287,11 @@ void SpecificWorker::check_free_path_to_target( const RoboCompLaser::TLaserData 
 
 }
 
+float SpecificWorker::banda_laser(const RoboCompLaser::TLaserData &ldata, int min, int max)
+{
+    auto res = std::min_element(ldata.begin()+min, ldata.begin()+max, [](auto a, auto b){ return a.dist < b.dist;} );
+    return (*res).dist;
+}
 /**************************************/
 // From the RoboCompDifferentialRobot you can call this methods:
 // this->differentialrobot_proxy->correctOdometer(...)

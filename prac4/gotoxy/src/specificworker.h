@@ -30,7 +30,7 @@
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
 #include <abstract_graphic_viewer/abstract_graphic_viewer.h>
-#include <eigen3/Eigen/Eigen>
+#include <Eigen/Dense>
 #include <cppitertools/range.hpp>
 
 class SpecificWorker : public GenericWorker
@@ -52,7 +52,7 @@ public slots:
 private:
 	std::shared_ptr < InnerModel > innerModel;
 	bool startup_check_flag;
-
+    float A,B,C;
     struct Target{
         QPointF dest;
         bool activo;
