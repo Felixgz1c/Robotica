@@ -160,13 +160,6 @@ Eigen::Vector2f SpecificWorker::world_to_robot(RoboCompGenericBase::TBaseState b
     return posicion *(mundo-robpos);//crear matriz con eigen 2f . bstate.angle
 }
 
-Eigen::Vector2f SpecificWorker::robot_to_world(RoboCompGenericBase::TBaseState bState, Eigen::Vector2f mundo){
-    Eigen::Vector2f robpos(bState.x,bState.z);
-    Eigen::Matrix2f posicion;
-    posicion <<cos (bState.alpha),-sin(bState.alpha) , sin(bState.alpha), cos(bState.alpha);
-    return posicion.transpose().inverse()* mundo+robpos;
-}
-
 float SpecificWorker::dist_to_target(Eigen::Vector2f pr) {
     if(pr.norm()>1200)
         return 1;
@@ -187,17 +180,15 @@ float SpecificWorker::dist_to_line(float &A, float &B, float &C, RoboCompGeneric
 }
 
 void SpecificWorker::turn(RoboCompLaser::TLaserData &laser){
-    printf("distancia izqda: %f\n",laser[45].dist);
-    printf("distancia 60º izqda: %f\n",laser[135].dist);
+    printf("distancia izqda: %f\n", banda_laser(laser,160,180));
     differentialrobot_proxy->setSpeedBase(0,0.5);
-    if(laser[45].dist< 550 && laser[135].dist>1500){
+    if(banda_laser(laser,160,200)>1500){
         robotState=4;//BORDER
         differentialrobot_proxy->setSpeedBase(0,0);
     }
 }
 
 void SpecificWorker::forward(Eigen::Vector2f target_eigen,RoboCompLaser::TLaserData &laser,RoboCompGenericBase::TBaseState bState){
-    float frente=laser.size()/2;
     Eigen::Vector2f pr = world_to_robot(bState, target_eigen);//position of the robot (pr)
 
     float beta = atan2(pr.x(), pr.y());
@@ -205,7 +196,8 @@ void SpecificWorker::forward(Eigen::Vector2f target_eigen,RoboCompLaser::TLaserD
     printf ("La velocidades son: %f y %f\n",adv, beta);
     differentialrobot_proxy->setSpeedBase(adv, beta);
 
-    if (laser[frente].dist > 0 && laser[frente].dist < 600) {
+    //banda_laserlaser,160,200) > 0 &&
+    if (banda_laser(laser,160,200) < 600) {
         differentialrobot_proxy->setSpeedBase(0, 0);
         robotState = 3;//TURN
     }
@@ -225,66 +217,13 @@ void SpecificWorker::border(RoboCompLaser::TLaserData &laser, float &A, float &B
     }
 
     else {
-        if (laser[45].dist > 500 )
+        if (banda_laser(laser,30,120) > 500 )
             differentialrobot_proxy->setSpeedBase(300, -0.4);
-        else if (laser[45].dist < 500)
+        else if (banda_laser(laser,30,120) < 500)
             differentialrobot_proxy->setSpeedBase(300, 0.4);
         else
             differentialrobot_proxy->setSpeedBase(300, 0);
     }
-}
-
-void SpecificWorker::check_free_path_to_target( const RoboCompLaser::TLaserData &ldata, RoboCompGenericBase::TBaseState &bState, Eigen::Vector2f &mundo) {
-    // lambda to convert from Eigen to QPointF
-    auto toQPointF = [](const Eigen::Vector2f &p) { return QPointF(p.x(), p.y()); };
-
-    // create polyggon
-    QPolygonF pol;
-    pol << QPointF(0, 0);
-    for (const auto &l: ldata)
-        pol << QPointF(l.dist * sin(l.angle), l.dist * cos(l.angle));
-
-    // create tube lines
-    auto goal_r = world_to_robot(bState, mundo);
-    Eigen::Vector2f robot(0.0, 0.0);
-    // number of parts the target vector is divided into
-    float parts = (goal_r).norm() / (ROBOT_LENGTH / 4);
-    Eigen::Vector2f rside(220, 200);
-    Eigen::Vector2f lside(-220, 200);
-    if (parts < 1) return;
-
-    QPointF p, q, r;
-    for (auto l: iter::range(0.0, 1.0, 1.0 / parts)) {
-        p = toQPointF(robot * (1 - l) + goal_r * l);
-        q = toQPointF((robot + rside) * (1 - l) + (goal_r + rside) * l);
-        r = toQPointF((robot + lside) * (1 - l) + (goal_r + lside) * l);
-        if (not pol.containsPoint(p, Qt::OddEvenFill) or
-            not pol.containsPoint(q, Qt::OddEvenFill) or
-            not pol.containsPoint(r, Qt::OddEvenFill))
-            break;
-    }
-    // draw
-    QLineF line_center(toQPointF(robot_to_world(bState,robot)), toQPointF(robot_to_world(bState,Eigen::Vector2f(p.x(),p.y()))));
-    QLineF line_right(toQPointF(robot_to_world(bState,robot+rside)), toQPointF(robot_to_world(bState,Eigen::Vector2f(q.x(),q.y()))));
-    QLineF line_left(toQPointF(robot_to_world(bState,robot+lside)), toQPointF(robot_to_world(bState,Eigen::Vector2f(r.x(),r.y()))));
-    static QGraphicsItem *graphics_line_center = nullptr;
-    static QGraphicsItem *graphics_line_right = nullptr;
-    static QGraphicsItem *graphics_line_left = nullptr;
-    static QGraphicsItem *graphics_target = nullptr;
-    if (graphics_line_center != nullptr)
-        viewer->scene.removeItem(graphics_line_center);
-    if (graphics_line_right != nullptr)
-        viewer->scene.removeItem(graphics_line_right);
-    if (graphics_line_left != nullptr)
-        viewer->scene.removeItem(graphics_line_left);
-    if (graphics_target != nullptr)
-        viewer->scene.removeItem(graphics_target);
-    graphics_line_center = viewer->scene.addLine(line_center, QPen(QColor("Blue"), 30));
-    graphics_line_right = viewer->scene.addLine(line_right, QPen(QColor("Orange"), 30));
-    graphics_line_left = viewer->scene.addLine(line_left, QPen(QColor("Magenta"), 30));
-    graphics_target = viewer->scene.addEllipse(-100, -100, 200, 200, QPen(QColor("Blue")), QBrush(QColor("Blue")));
-    graphics_target->setPos(mundo.x(), mundo.y());
-
 }
 
 float SpecificWorker::banda_laser(const RoboCompLaser::TLaserData &ldata, int min, int max)
