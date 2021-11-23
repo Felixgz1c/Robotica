@@ -44,6 +44,7 @@ void SpecificWorker::initialize(int period)
 	std::cout << "Initialize worker" << std::endl;
     QRectF dimensions(-5000,-2500,10000,5000);
     viewer = new AbstractGraphicViewer(this,dimensions);
+    gridmap.initialize(dimensions, ROBOT_LENGTH, &viewer->scene);
     this->resize(900,450);
     robot_polygon = viewer->add_robot(ROBOT_LENGTH);
     laser_in_robot_polygon = new QGraphicsRectItem(-10, 10, 20, 20, robot_polygon);

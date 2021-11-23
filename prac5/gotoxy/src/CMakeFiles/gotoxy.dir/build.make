@@ -128,9 +128,22 @@ src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/specificmonitor.cpp.s"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/specificmonitor.cpp -o CMakeFiles/gotoxy.dir/specificmonitor.cpp.s
 
+src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
+src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.o: /home/alumno/robocomp/classes/grid2d/grid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.o"
+	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.o -c /home/alumno/robocomp/classes/grid2d/grid.cpp
+
+src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.i"
+	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alumno/robocomp/classes/grid2d/grid.cpp > CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.i
+
+src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.s"
+	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alumno/robocomp/classes/grid2d/grid.cpp -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.s
+
 src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o: /home/alumno/robocomp/classes/rapplication/rapplication.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o -c /home/alumno/robocomp/classes/rapplication/rapplication.cpp
 
 src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.i: cmake_force
@@ -143,7 +156,7 @@ src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication
 
 src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o: /home/alumno/robocomp/classes/sigwatch/sigwatch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o -c /home/alumno/robocomp/classes/sigwatch/sigwatch.cpp
 
 src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.i: cmake_force
@@ -156,7 +169,7 @@ src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.s: 
 
 src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o: /home/alumno/robocomp/classes/qlog/qlog.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o -c /home/alumno/robocomp/classes/qlog/qlog.cpp
 
 src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.i: cmake_force
@@ -169,7 +182,7 @@ src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.s: cmake_fo
 
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/gotoxy.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/gotoxy.dir/main.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/main.cpp.o -c /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/main.cpp
 
 src/CMakeFiles/gotoxy.dir/main.cpp.i: cmake_force
@@ -182,7 +195,7 @@ src/CMakeFiles/gotoxy.dir/main.cpp.s: cmake_force
 
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/genericmonitor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/genericmonitor.cpp.o -c /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/genericmonitor.cpp
 
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.i: cmake_force
@@ -195,7 +208,7 @@ src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.s: cmake_force
 
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/commonbehaviorI.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o -c /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/commonbehaviorI.cpp
 
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.i: cmake_force
@@ -208,7 +221,7 @@ src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.s: cmake_force
 
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/genericworker.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object src/CMakeFiles/gotoxy.dir/genericworker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/CMakeFiles/gotoxy.dir/genericworker.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/genericworker.cpp.o -c /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/genericworker.cpp
 
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.i: cmake_force
@@ -221,7 +234,7 @@ src/CMakeFiles/gotoxy.dir/genericworker.cpp.s: cmake_force
 
 src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o: src/CommonBehavior.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o -c /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CommonBehavior.cpp
 
 src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.i: cmake_force
@@ -234,7 +247,7 @@ src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.s: cmake_force
 
 src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o -c /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/DifferentialRobot.cpp
 
 src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.i: cmake_force
@@ -247,7 +260,7 @@ src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.s: cmake_force
 
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o: src/GenericBase.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/GenericBase.cpp.o -c /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/GenericBase.cpp
 
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.i: cmake_force
@@ -260,7 +273,7 @@ src/CMakeFiles/gotoxy.dir/GenericBase.cpp.s: cmake_force
 
 src/CMakeFiles/gotoxy.dir/Laser.cpp.o: src/CMakeFiles/gotoxy.dir/flags.make
 src/CMakeFiles/gotoxy.dir/Laser.cpp.o: src/Laser.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object src/CMakeFiles/gotoxy.dir/Laser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object src/CMakeFiles/gotoxy.dir/Laser.cpp.o"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gotoxy.dir/Laser.cpp.o -c /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/Laser.cpp
 
 src/CMakeFiles/gotoxy.dir/Laser.cpp.i: cmake_force
@@ -276,6 +289,7 @@ gotoxy_OBJECTS = \
 "CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/gotoxy.dir/specificworker.cpp.o" \
 "CMakeFiles/gotoxy.dir/specificmonitor.cpp.o" \
+"CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.o" \
 "CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o" \
 "CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o" \
 "CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o" \
@@ -294,6 +308,7 @@ gotoxy_EXTERNAL_OBJECTS =
 bin/gotoxy: src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o
 bin/gotoxy: src/CMakeFiles/gotoxy.dir/specificworker.cpp.o
 bin/gotoxy: src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o
+bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.o
 bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o
 bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o
 bin/gotoxy: src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o
@@ -317,7 +332,7 @@ bin/gotoxy: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8
 bin/gotoxy: /usr/lib/x86_64-linux-gnu/libQt5Network.so.5.12.8
 bin/gotoxy: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8
 bin/gotoxy: src/CMakeFiles/gotoxy.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable ../bin/gotoxy"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable ../bin/gotoxy"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gotoxy.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

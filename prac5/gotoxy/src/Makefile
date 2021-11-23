@@ -417,6 +417,33 @@ gotoxy_autogen/mocs_compilation.cpp.s:
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy && $(MAKE) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.s
 .PHONY : gotoxy_autogen/mocs_compilation.cpp.s
 
+home/alumno/robocomp/classes/grid2d/grid.o: home/alumno/robocomp/classes/grid2d/grid.cpp.o
+
+.PHONY : home/alumno/robocomp/classes/grid2d/grid.o
+
+# target to build an object file
+home/alumno/robocomp/classes/grid2d/grid.cpp.o:
+	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy && $(MAKE) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.o
+.PHONY : home/alumno/robocomp/classes/grid2d/grid.cpp.o
+
+home/alumno/robocomp/classes/grid2d/grid.i: home/alumno/robocomp/classes/grid2d/grid.cpp.i
+
+.PHONY : home/alumno/robocomp/classes/grid2d/grid.i
+
+# target to preprocess a source file
+home/alumno/robocomp/classes/grid2d/grid.cpp.i:
+	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy && $(MAKE) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.i
+.PHONY : home/alumno/robocomp/classes/grid2d/grid.cpp.i
+
+home/alumno/robocomp/classes/grid2d/grid.s: home/alumno/robocomp/classes/grid2d/grid.cpp.s
+
+.PHONY : home/alumno/robocomp/classes/grid2d/grid.s
+
+# target to generate assembly for a file
+home/alumno/robocomp/classes/grid2d/grid.cpp.s:
+	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy && $(MAKE) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.s
+.PHONY : home/alumno/robocomp/classes/grid2d/grid.cpp.s
+
 home/alumno/robocomp/classes/qlog/qlog.o: home/alumno/robocomp/classes/qlog/qlog.cpp.o
 
 .PHONY : home/alumno/robocomp/classes/qlog/qlog.o
@@ -618,6 +645,9 @@ help:
 	@echo "... gotoxy_autogen/mocs_compilation.o"
 	@echo "... gotoxy_autogen/mocs_compilation.i"
 	@echo "... gotoxy_autogen/mocs_compilation.s"
+	@echo "... home/alumno/robocomp/classes/grid2d/grid.o"
+	@echo "... home/alumno/robocomp/classes/grid2d/grid.i"
+	@echo "... home/alumno/robocomp/classes/grid2d/grid.s"
 	@echo "... home/alumno/robocomp/classes/qlog/qlog.o"
 	@echo "... home/alumno/robocomp/classes/qlog/qlog.i"
 	@echo "... home/alumno/robocomp/classes/qlog/qlog.s"

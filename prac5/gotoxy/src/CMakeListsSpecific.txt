@@ -3,15 +3,17 @@ SET ( SOURCES
   specificworker.cpp
   specificmonitor.cpp
   $ENV{ROBOCOMP}/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
+  $ENV{ROBOCOMP}/classes/grid2d/grid.cpp
 )
 
 # Headers set
 SET ( HEADERS
   specificworker.h
   specificmonitor.h
+  $ENV{ROBOCOMP}/classes/grid2d/grid.h
 )
 
 
-SET (LIBS ${LIBS}  )
+SET (LIBS ${LIBS}  tbb )
 
 

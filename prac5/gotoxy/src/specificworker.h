@@ -32,6 +32,7 @@
 #include <abstract_graphic_viewer/abstract_graphic_viewer.h>
 #include <Eigen/Dense>
 #include <cppitertools/range.hpp>
+#include <grid2d/grid.h>
 
 class SpecificWorker : public GenericWorker
 {
@@ -57,6 +58,7 @@ private:
         QPointF dest;
         bool activo;
     };
+    Grid gridmap;
     Target target;
     const float MAX_ADV_SPEED=1000;
     AbstractGraphicViewer *viewer;

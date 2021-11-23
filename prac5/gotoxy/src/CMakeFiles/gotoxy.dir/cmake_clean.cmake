@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/gotoxy.dir/genericmonitor.cpp.o"
   "CMakeFiles/gotoxy.dir/genericworker.cpp.o"
   "CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/grid2d/grid.cpp.o"
   "CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o"
   "CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o"
   "CMakeFiles/gotoxy.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o"

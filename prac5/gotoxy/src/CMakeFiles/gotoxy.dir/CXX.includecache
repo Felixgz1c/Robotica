@@ -6,88 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CommonBehavior.cpp
-CommonBehavior.h
--
-IceUtil/PushDisableWarnings.h
--
-Ice/LocalException.h
--
-Ice/ValueFactory.h
--
-Ice/OutgoingAsync.h
--
-Ice/InputStream.h
--
-Ice/OutputStream.h
--
-IceUtil/PopDisableWarnings.h
--
-
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/DifferentialRobot.cpp
-DifferentialRobot.h
--
-IceUtil/PushDisableWarnings.h
--
-Ice/LocalException.h
--
-Ice/ValueFactory.h
--
-Ice/OutgoingAsync.h
--
-Ice/InputStream.h
--
-Ice/OutputStream.h
--
-Ice/LocalException.h
--
-IceUtil/PopDisableWarnings.h
--
-
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/GenericBase.cpp
-GenericBase.h
--
-IceUtil/PushDisableWarnings.h
--
-Ice/LocalException.h
--
-Ice/ValueFactory.h
--
-Ice/OutgoingAsync.h
--
-Ice/InputStream.h
--
-Ice/OutputStream.h
--
-Ice/LocalException.h
--
-IceUtil/PopDisableWarnings.h
--
-
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/Laser.cpp
-Laser.h
--
-IceUtil/PushDisableWarnings.h
--
-Ice/LocalException.h
--
-Ice/ValueFactory.h
--
-Ice/OutgoingAsync.h
--
-Ice/InputStream.h
--
-Ice/OutputStream.h
--
-Ice/LocalException.h
--
-IceUtil/PopDisableWarnings.h
--
-
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/commonbehaviorI.cpp
-commonbehaviorI.h
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/commonbehaviorI.h
-
 /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/commonbehaviorI.h
 Ice/Ice.h
 -
@@ -101,10 +19,6 @@ genericmonitor.h
 /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/genericmonitor.h
 
 /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/config.h
-
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/genericmonitor.cpp
-genericmonitor.h
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/genericmonitor.h
 
 /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/genericmonitor.h
 Ice/Ice.h
@@ -119,10 +33,6 @@ qlog/qlog.h
 -
 CommonBehavior.h
 -
-
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/genericworker.cpp
-genericworker.h
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/genericworker.h
 
 /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/genericworker.h
 config.h
@@ -232,10 +142,6 @@ commonbehaviorI.h
 GenericBase.h
 -
 
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/specificmonitor.cpp
-specificmonitor.h
-/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/specificmonitor.h
-
 /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/specificmonitor.h
 genericmonitor.h
 /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/genericmonitor.h
@@ -254,6 +160,8 @@ abstract_graphic_viewer/abstract_graphic_viewer.h
 Eigen/Dense
 -
 cppitertools/range.hpp
+-
+grid2d/grid.h
 -
 
 /home/alumno/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
@@ -280,9 +188,47 @@ QGraphicsPolygonItem
 iostream
 -
 
-/home/alumno/robocomp/classes/qlog/qlog.cpp
-qlog.h
-/home/alumno/robocomp/classes/qlog/qlog.h
+/home/alumno/robocomp/classes/grid2d/grid.cpp
+grid.h
+/home/alumno/robocomp/classes/grid2d/grid.h
+cppitertools/zip.hpp
+-
+cppitertools/range.hpp
+-
+cppitertools/slice.hpp
+-
+execution
+-
+
+/home/alumno/robocomp/classes/grid2d/grid.h
+unordered_map
+-
+boost/functional/hash.hpp
+-
+iostream
+-
+fstream
+-
+limits
+-
+tuple
+-
+QGraphicsScene
+-
+QGraphicsRectItem
+-
+chrono
+-
+unistd.h
+-
+QtCore
+-
+Eigen/Dense
+-
+QVector2D
+-
+QColor
+-
 
 /home/alumno/robocomp/classes/qlog/qlog.h
 config.h
@@ -297,10 +243,6 @@ boost/format.hpp
 -
 boost/format.hpp
 -
-
-/home/alumno/robocomp/classes/rapplication/rapplication.cpp
-rapplication.h
-/home/alumno/robocomp/classes/rapplication/rapplication.h
 
 /home/alumno/robocomp/classes/rapplication/rapplication.h
 Ice/Ice.h
@@ -2266,6 +2208,10 @@ QtCore/qvector.h
 QtCore/qscopedpointer.h
 -
 
+/usr/include/x86_64-linux-gnu/qt5/QtGui/QColor
+qcolor.h
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h
+
 /usr/include/x86_64-linux-gnu/qt5/QtGui/QImage
 qimage.h
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h
@@ -2305,6 +2251,10 @@ qsurfaceformat.h
 /usr/include/x86_64-linux-gnu/qt5/QtGui/QTransform
 qtransform.h
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/QVector2D
+qvector2d.h
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/QVector3D
 qvector3d.h
@@ -3779,6 +3729,10 @@ qcommonstyle.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcommonstyle.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsPolygonItem
+qgraphicsitem.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsitem.h
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsRectItem
 qgraphicsitem.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgraphicsitem.h
 
@@ -5452,6 +5406,8 @@ abstract_graphic_viewer/abstract_graphic_viewer.h
 Eigen/Dense
 -
 cppitertools/range.hpp
+-
+grid2d/grid.h
 -
 
 src/ui_mainUI.h
