@@ -58,7 +58,7 @@ private:
         QPointF dest;
         bool activo;
     };
-    Grid gridmap;
+    Grid grid;
     Target target;
     const float MAX_ADV_SPEED=1000;
     AbstractGraphicViewer *viewer;

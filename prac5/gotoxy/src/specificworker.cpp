@@ -68,6 +68,8 @@ void SpecificWorker::initialize(int period)
 		timer.start(Period);
 	}
     robotState=1;
+    QRect grid_dimensions(-5000, -2500, 10000, 5000);
+    grid.initialize(grid_dimensions, 200, scene, false, "", 1);
 }
 
 void SpecificWorker::compute()
