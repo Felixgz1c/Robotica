@@ -8,6 +8,9 @@ src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.cpp
 src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o: src/DifferentialRobot.h
 src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o: src/GenericBase.h
 
+src/CMakeFiles/gotoxy.dir/FullPoseEstimation.cpp.o: src/FullPoseEstimation.cpp
+src/CMakeFiles/gotoxy.dir/FullPoseEstimation.cpp.o: src/FullPoseEstimation.h
+
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o: src/GenericBase.cpp
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o: src/GenericBase.h
 
@@ -482,6 +485,7 @@ src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: /usr/include/x86_64-linux-gnu/q
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/FullPoseEstimation.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o: src/config.h
@@ -954,6 +958,7 @@ src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/FullPoseEstimation.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o: src/ui_mainUI.h
@@ -1424,6 +1429,7 @@ src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: /usr/include/x86_64-linux-gnu/qt5
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/FullPoseEstimation.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/genericworker.cpp.o: src/ui_mainUI.h
@@ -1913,6 +1919,7 @@ src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: /usr/include/x8
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/FullPoseEstimation.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o: src/config.h
@@ -3099,6 +3106,7 @@ src/CMakeFiles/gotoxy.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidget
 src/CMakeFiles/gotoxy.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/gotoxy.dir/main.cpp.o: src/FullPoseEstimation.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/main.cpp.o: src/ui_mainUI.h
@@ -3571,6 +3579,7 @@ src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: /usr/include/x86_64-linux-gnu/q
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/FullPoseEstimation.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o: src/ui_mainUI.h
@@ -4056,6 +4065,7 @@ src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: /usr/include/x86_64-linux-gnu/qt
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: src/CommonBehavior.h
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: src/DifferentialRobot.h
+src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: src/FullPoseEstimation.h
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: src/GenericBase.h
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: src/Laser.h
 src/CMakeFiles/gotoxy.dir/specificworker.cpp.o: src/config.h

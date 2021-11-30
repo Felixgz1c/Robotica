@@ -30,9 +30,13 @@
 #include <genericworker.h>
 #include <innermodel/innermodel.h>
 #include <abstract_graphic_viewer/abstract_graphic_viewer.h>
-#include <Eigen/Dense>
+#include <eigen3/Eigen/Dense>
 #include <cppitertools/range.hpp>
 #include <grid2d/grid.h>
+
+#include <QApplication>
+#include <QtGui>
+
 
 class SpecificWorker : public GenericWorker
 {
@@ -59,6 +63,7 @@ private:
         bool activo;
     };
     Grid grid;
+
     Target target;
     const float MAX_ADV_SPEED=1000;
     AbstractGraphicViewer *viewer;

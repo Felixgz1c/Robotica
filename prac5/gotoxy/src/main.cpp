@@ -131,6 +131,7 @@ int ::gotoxy::run(int argc, char* argv[])
 	int status=EXIT_SUCCESS;
 
 	RoboCompDifferentialRobot::DifferentialRobotPrx differentialrobot_proxy;
+	RoboCompFullPoseEstimation::FullPoseEstimationPrx fullposeestimation_proxy;
 	RoboCompLaser::LaserPrx laser_proxy;
 
 	string proxy, tmp;
@@ -152,6 +153,23 @@ int ::gotoxy::run(int argc, char* argv[])
 	rInfo("DifferentialRobotProxy initialized Ok!");
 
 	mprx["DifferentialRobotProxy"] = (::IceProxy::Ice::Object*)(&differentialrobot_proxy);//Remote server proxy creation example
+
+	try
+	{
+		if (not GenericMonitor::configGetString(communicator(), prefix, "FullPoseEstimationProxy", proxy, ""))
+		{
+			cout << "[" << PROGRAM_NAME << "]: Can't read configuration for proxy FullPoseEstimationProxy\n";
+		}
+		fullposeestimation_proxy = RoboCompFullPoseEstimation::FullPoseEstimationPrx::uncheckedCast( communicator()->stringToProxy( proxy ) );
+	}
+	catch(const Ice::Exception& ex)
+	{
+		cout << "[" << PROGRAM_NAME << "]: Exception creating proxy FullPoseEstimation: " << ex;
+		return EXIT_FAILURE;
+	}
+	rInfo("FullPoseEstimationProxy initialized Ok!");
+
+	mprx["FullPoseEstimationProxy"] = (::IceProxy::Ice::Object*)(&fullposeestimation_proxy);//Remote server proxy creation example
 
 	try
 	{

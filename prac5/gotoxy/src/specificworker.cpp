@@ -44,7 +44,6 @@ void SpecificWorker::initialize(int period)
 	std::cout << "Initialize worker" << std::endl;
     QRectF dimensions(-5000,-2500,10000,5000);
     viewer = new AbstractGraphicViewer(this,dimensions);
-    gridmap.initialize(dimensions, ROBOT_LENGTH, &viewer->scene);
     this->resize(900,450);
     robot_polygon = viewer->add_robot(ROBOT_LENGTH);
     laser_in_robot_polygon = new QGraphicsRectItem(-10, 10, 20, 20, robot_polygon);
@@ -69,6 +68,7 @@ void SpecificWorker::initialize(int period)
 	}
     robotState=1;
     QRect grid_dimensions(-5000, -2500, 10000, 5000);
+    QGraphicsScene *scene = new QGraphicsScene(grid_dimensions, this);
     grid.initialize(grid_dimensions, 200, scene, false, "", 1);
 }
 
@@ -79,9 +79,17 @@ void SpecificWorker::compute()
         RoboCompLaser::TLaserData ldata;
         ldata = laser_proxy->getLaserData();
         draw_laser(ldata);
+
+
         differentialrobot_proxy->getBaseState(bState);
         robot_polygon->setRotation(bState.alpha*180/M_PI);
         robot_polygon->setPos(bState.x, bState.z);
+
+        auto r_state = fullposeestimation_proxy->getFullPoseEuler();
+        robot_polygon->setRotation(r_state.rz*180/M_PI);
+        robot_polygon->setPos(r_state.x, r_state.y);
+
+
 
         switch(robotState) {
             case 1://IDLE. Waiting for target, when target.active = true -> move to FORWARD
@@ -116,7 +124,7 @@ void SpecificWorker::compute()
             //differentialrobot_proxy->setSpeedBase(adv, beta);
         }
     catch (const Ice::Exception &ex) {
-        std::cout << ex << std::endl;
+        std::cout << ex.what() << std::endl;
     }
 }
 

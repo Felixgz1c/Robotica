@@ -126,6 +126,7 @@
 	[
 		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CommonBehavior.cpp",
 		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/DifferentialRobot.cpp",
+		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/FullPoseEstimation.cpp",
 		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/GenericBase.cpp",
 		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/Laser.cpp",
 		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/ui_mainUI.h"
@@ -171,6 +172,7 @@
 	[
 		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CommonBehavior.cpp",
 		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/DifferentialRobot.cpp",
+		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/FullPoseEstimation.cpp",
 		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/GenericBase.cpp",
 		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/Laser.cpp",
 		"/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/mainUI.ui",

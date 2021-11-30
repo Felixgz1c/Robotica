@@ -255,6 +255,33 @@ DifferentialRobot.cpp.s:
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy && $(MAKE) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.s
 .PHONY : DifferentialRobot.cpp.s
 
+FullPoseEstimation.o: FullPoseEstimation.cpp.o
+
+.PHONY : FullPoseEstimation.o
+
+# target to build an object file
+FullPoseEstimation.cpp.o:
+	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy && $(MAKE) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/FullPoseEstimation.cpp.o
+.PHONY : FullPoseEstimation.cpp.o
+
+FullPoseEstimation.i: FullPoseEstimation.cpp.i
+
+.PHONY : FullPoseEstimation.i
+
+# target to preprocess a source file
+FullPoseEstimation.cpp.i:
+	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy && $(MAKE) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/FullPoseEstimation.cpp.i
+.PHONY : FullPoseEstimation.cpp.i
+
+FullPoseEstimation.s: FullPoseEstimation.cpp.s
+
+.PHONY : FullPoseEstimation.s
+
+# target to generate assembly for a file
+FullPoseEstimation.cpp.s:
+	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy && $(MAKE) -f src/CMakeFiles/gotoxy.dir/build.make src/CMakeFiles/gotoxy.dir/FullPoseEstimation.cpp.s
+.PHONY : FullPoseEstimation.cpp.s
+
 GenericBase.o: GenericBase.cpp.o
 
 .PHONY : GenericBase.o
@@ -627,6 +654,9 @@ help:
 	@echo "... DifferentialRobot.o"
 	@echo "... DifferentialRobot.i"
 	@echo "... DifferentialRobot.s"
+	@echo "... FullPoseEstimation.o"
+	@echo "... FullPoseEstimation.i"
+	@echo "... FullPoseEstimation.s"
 	@echo "... GenericBase.o"
 	@echo "... GenericBase.i"
 	@echo "... GenericBase.s"

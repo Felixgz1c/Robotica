@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CommonBehavior.cpp" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/gotoxy.dir/CommonBehavior.cpp.o"
   "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/DifferentialRobot.cpp" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o"
+  "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/FullPoseEstimation.cpp" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/gotoxy.dir/FullPoseEstimation.cpp.o"
   "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/GenericBase.cpp" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o"
   "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/Laser.cpp" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/gotoxy.dir/Laser.cpp.o"
   "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/commonbehaviorI.cpp" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o"
@@ -63,6 +64,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CommonBehavior.h" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CommonBehavior.cpp"
   "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/DifferentialRobot.h" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/DifferentialRobot.cpp"
+  "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/FullPoseEstimation.h" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/FullPoseEstimation.cpp"
   "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/GenericBase.h" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/GenericBase.cpp"
   "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/Laser.h" "/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/Laser.cpp"
   )

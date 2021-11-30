@@ -8,6 +8,9 @@ src/CMakeFiles/gotoxy.dir/DifferentialRobot.cpp.o
  /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/DifferentialRobot.cpp
  src/DifferentialRobot.h
  src/GenericBase.h
+src/CMakeFiles/gotoxy.dir/FullPoseEstimation.cpp.o
+ /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/FullPoseEstimation.cpp
+ src/FullPoseEstimation.h
 src/CMakeFiles/gotoxy.dir/GenericBase.cpp.o
  /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/GenericBase.cpp
  src/GenericBase.h
@@ -483,6 +486,7 @@ src/CMakeFiles/gotoxy.dir/commonbehaviorI.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/FullPoseEstimation.h
  src/GenericBase.h
  src/Laser.h
  src/config.h
@@ -955,6 +959,7 @@ src/CMakeFiles/gotoxy.dir/genericmonitor.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/FullPoseEstimation.h
  src/GenericBase.h
  src/Laser.h
  src/ui_mainUI.h
@@ -1425,6 +1430,7 @@ src/CMakeFiles/gotoxy.dir/genericworker.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/FullPoseEstimation.h
  src/GenericBase.h
  src/Laser.h
  src/ui_mainUI.h
@@ -1914,6 +1920,7 @@ src/CMakeFiles/gotoxy.dir/gotoxy_autogen/mocs_compilation.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/FullPoseEstimation.h
  src/GenericBase.h
  src/Laser.h
  src/config.h
@@ -3100,6 +3107,7 @@ src/CMakeFiles/gotoxy.dir/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/FullPoseEstimation.h
  src/GenericBase.h
  src/Laser.h
  src/ui_mainUI.h
@@ -3572,6 +3580,7 @@ src/CMakeFiles/gotoxy.dir/specificmonitor.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/FullPoseEstimation.h
  src/GenericBase.h
  src/Laser.h
  src/ui_mainUI.h
@@ -4057,6 +4066,7 @@ src/CMakeFiles/gotoxy.dir/specificworker.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h
  src/CommonBehavior.h
  src/DifferentialRobot.h
+ src/FullPoseEstimation.h
  src/GenericBase.h
  src/Laser.h
  src/config.h

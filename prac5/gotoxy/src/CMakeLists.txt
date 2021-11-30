@@ -31,8 +31,8 @@ SET ( SOURCES
 
 #ROBOCOMP
 ROBOCOMP_INITIALIZE( $ENV{ROBOCOMP}/ )
-ROBOCOMP_IDSL_TO_ICE( CommonBehavior DifferentialRobot GenericBase Laser)
-ROBOCOMP_ICE_TO_SRC( CommonBehavior DifferentialRobot GenericBase Laser)
+ROBOCOMP_IDSL_TO_ICE( CommonBehavior DifferentialRobot FullPoseEstimation GenericBase Laser)
+ROBOCOMP_ICE_TO_SRC( CommonBehavior DifferentialRobot FullPoseEstimation GenericBase Laser)
 SET (EXECUTABLE_OUTPUT_PATH ${RC_COMPONENT_DEVEL_PATH}/bin)
 
 QT_WRAP_UI( UI_HEADERS mainUI.ui )

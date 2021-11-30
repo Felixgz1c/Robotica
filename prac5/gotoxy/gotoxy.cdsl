@@ -1,12 +1,15 @@
 import "DifferentialRobot.idsl";
 import "Laser.idsl";
+import "FullPoseEstimation.idsl";
 Component gotoxy
+
 {
     Communications
     {
-        requires DifferentialRobot, Laser;
+        requires DifferentialRobot, Laser,FullPoseEstimation;
     };
     language Cpp; // or language Python;
     gui Qt(QWidget);
+
 };
 

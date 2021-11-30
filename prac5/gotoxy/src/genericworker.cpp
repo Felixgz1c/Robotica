@@ -24,6 +24,7 @@ GenericWorker::GenericWorker(MapPrx& mprx) : Ui_guiDlg()
 {
 
 	differentialrobot_proxy = (*(RoboCompDifferentialRobot::DifferentialRobotPrx*)mprx["DifferentialRobotProxy"]);
+	fullposeestimation_proxy = (*(RoboCompFullPoseEstimation::FullPoseEstimationPrx*)mprx["FullPoseEstimationProxy"]);
 	laser_proxy = (*(RoboCompLaser::LaserPrx*)mprx["LaserProxy"]);
 
 	mutex = new QMutex(QMutex::Recursive);

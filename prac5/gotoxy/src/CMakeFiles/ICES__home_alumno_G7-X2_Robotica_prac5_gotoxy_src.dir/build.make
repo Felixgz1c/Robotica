@@ -58,6 +58,8 @@ ICES__home_alumno_G7-X2_Robotica_prac5_gotoxy_src: src/CMakeFiles/ICES__home_alu
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && robocompdsl /home/alumno/robocomp/interfaces/IDSLs/CommonBehavior.idsl /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CommonBehavior.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "BU robocompdsl /home/alumno/robocomp/interfaces/IDSLs/DifferentialRobot.idsl /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/DifferentialRobot.ice"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && robocompdsl /home/alumno/robocomp/interfaces/IDSLs/DifferentialRobot.idsl /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/DifferentialRobot.ice
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "BU robocompdsl /home/alumno/robocomp/interfaces/IDSLs/FullPoseEstimation.idsl /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/FullPoseEstimation.ice"
+	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && robocompdsl /home/alumno/robocomp/interfaces/IDSLs/FullPoseEstimation.idsl /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/FullPoseEstimation.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "BU robocompdsl /home/alumno/robocomp/interfaces/IDSLs/GenericBase.idsl /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/GenericBase.ice"
 	cd /home/alumno/G7-X2/Robotica/prac5/gotoxy/src && robocompdsl /home/alumno/robocomp/interfaces/IDSLs/GenericBase.idsl /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/GenericBase.ice
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "BU robocompdsl /home/alumno/robocomp/interfaces/IDSLs/Laser.idsl /home/alumno/G7-X2/Robotica/prac5/gotoxy/src/Laser.ice"

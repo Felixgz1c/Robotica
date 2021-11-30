@@ -32,6 +32,7 @@
 #include <CommonBehavior.h>
 
 #include <DifferentialRobot.h>
+#include <FullPoseEstimation.h>
 #include <GenericBase.h>
 #include <Laser.h>
 
@@ -57,6 +58,7 @@ public:
 
 
 	RoboCompDifferentialRobot::DifferentialRobotPrx differentialrobot_proxy;
+	RoboCompFullPoseEstimation::FullPoseEstimationPrx fullposeestimation_proxy;
 	RoboCompLaser::LaserPrx laser_proxy;
 
 

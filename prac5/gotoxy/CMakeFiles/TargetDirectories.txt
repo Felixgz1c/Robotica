@@ -1,0 +1,15 @@
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles/install/strip.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles/install/local.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles/install.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles/list_install_components.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles/rebuild_cache.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/CMakeFiles/edit_cache.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/install/strip.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/install/local.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/install.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/list_install_components.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/rebuild_cache.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/edit_cache.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/gotoxy.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/ICES__home_alumno_G7-X2_Robotica_prac5_gotoxy_src.dir
+/home/alumno/G7-X2/Robotica/prac5/gotoxy/src/CMakeFiles/gotoxy_autogen.dir
